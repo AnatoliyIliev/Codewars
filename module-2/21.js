@@ -1,16 +1,13 @@
 function findLongestWord(string) {
   // Пиши код ниже этой строки
-  let longWord = string.split(' ')[0];
-  let equals = ''
-  console.log(longWord)
-for (str of string.split(' ')){
-  if (longWord.length >= str.length){
-    equals = longWord;
-  } else {
-    equals = str;
-  }  
-}
-return equals;
+  let longWord = string.split(' ');
+  let firstWord = string.split(' ')[0];
+  for (str of longWord){
+    if (str.length > firstWord.length){
+      firstWord = str;
+    }   
+  }
+  return firstWord;
   // Пиши код выше этой строки
 }
 

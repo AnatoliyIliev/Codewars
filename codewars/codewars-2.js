@@ -1,16 +1,11 @@
 function duplicateCount(text) {
-  const lowerText = text.toLowerCase().split('');
-  let counter = [];
+  const vce = text
+    .toLowerCase()
+    .split('')
+    .filter((course, index, array) => array.indexOf(course) !== index)
+    .filter((course, index, array) => array.indexOf(course) === index);
 
-  if (lowerText.length === 0) {
-    return 0;
-  } else {
-    for (let i = 0; i <= lowerText.length; i += 1) {
-      if ((lowerText.find(duplicateCount), i)) {
-      }
-    }
-  }
-  return;
+  return vce.length;
 }
 
 console.log(duplicateCount(''));
@@ -21,24 +16,31 @@ console.log(duplicateCount('Indivisibility'));
 console.log(duplicateCount('Indivisibilities'));
 
 /*
+const uniqueCourses = allCourses.filter(
+  (course, index, array) => array.indexOf(course) === index
+);
 
-var arr = [6, 4, 3, 3, 1, 5, 12, 4, 1, 2, 7, 2, 1];
- 
-var ks=[];
-for(var value of arr){
-    ks[value] = (ks[value]||0)+1;
-}
-var arr2 =[];
-for(var i in arr) {
-  if ( ks[ arr[i] ] > 1 ) {
-        arr2.push(arr[i]);
-    }
-}
- 
-alert(arr2);
-console.log(arr2);
 
-var removedItem = fruits.splice(pos, 1); 
+
+var arr = ["jam", "beef", "cream", "jam"]
+var uniqs = arr.reduce((acc, val) => {
+  acc[val] = acc[val] === undefined ? 1 : acc[val] += 1;
+  return acc;
+}, {});
+console.log(uniqs)
+
+
+  const vce = text
+    .toLowerCase()
+    .split('')
+    .reduce((acc, unical) => {
+      // console.log(acc);
+      // console.log(unical);
+      acc[unical] = acc[unical] ? (acc[unical] += 1) : 1;
+      return acc;
+    }, {});
+
+  return vce;
 
 Подсчитайте количество дубликатов
 Напишите функцию, которая будет возвращать количество отдельных нечувствительных к регистру 

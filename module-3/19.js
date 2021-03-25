@@ -7,7 +7,7 @@ const products = [
 
 function getAllPropValues(propName) {
   // Пиши код ниже этой строки
-  allName = []
+  const allName = []
 
   for (const product of products) {
       const keys = Object.keys(product);

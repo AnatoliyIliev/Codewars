@@ -21,27 +21,6 @@ const uniqueCourses = allCourses.filter(
 );
 
 
-
-var arr = ["jam", "beef", "cream", "jam"]
-var uniqs = arr.reduce((acc, val) => {
-  acc[val] = acc[val] === undefined ? 1 : acc[val] += 1;
-  return acc;
-}, {});
-console.log(uniqs)
-
-
-  const vce = text
-    .toLowerCase()
-    .split('')
-    .reduce((acc, unical) => {
-      // console.log(acc);
-      // console.log(unical);
-      acc[unical] = acc[unical] ? (acc[unical] += 1) : 1;
-      return acc;
-    }, {});
-
-  return vce;
-
 Подсчитайте количество дубликатов
 Напишите функцию, которая будет возвращать количество отдельных нечувствительных к регистру 
 буквенных символов и числовых цифр, которые встречаются во входной строке более одного раза. 

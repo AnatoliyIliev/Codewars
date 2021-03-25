@@ -1,13 +1,14 @@
 // Пиши код ниже этой строки
 const getUsersWithFriend = (users, friendName) => {
   return users.filter(user => {
-    if (user.friends === friendName) {
+    if (user.friends.some(friend => friend === friendName)) {
+      // console.log(user.friends.some(friend => friend === friendName));
       return user;
     }
   });
 };
 // Пиши код выше этой строки
-
+// .filter((course, index, array) => array.indexOf(course) === index)
 /*
 'Briana Decker', = Sharlene Bush и Sheree Anthony.
 'Goldie Gentry', = Elma Head и Sheree Anthony.

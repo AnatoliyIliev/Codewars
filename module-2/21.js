@@ -1,6 +1,6 @@
 function findLongestWord(string) {
   // Пиши код ниже этой строки
-  let longWord = string.split(' ');
+  const longWord = string.split('');
   let firstWord = string.split(' ')[0];
   for (const str of longWord){
     if (str.length > firstWord.length){
@@ -14,7 +14,6 @@ function findLongestWord(string) {
 console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); 
 console.log(findLongestWord('Google do a roll')); 
 console.log(findLongestWord('May the force be with you')); 
-
 
 /*  
 

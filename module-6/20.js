@@ -1,14 +1,18 @@
 // Пиши код ниже этой строки
-const getUsersWithAge = (users, minAge, maxAge) => {
+const getUsersWithFriend = (users, friendName) => {
   return users.filter(user => {
-    if (user.age >= minAge && user.age < maxAge) {
+    if (user.friends === friendName) {
       return user;
     }
   });
 };
 // Пиши код выше этой строки
-//  20 и 30 = Ross Vazquez, Elma Head и Carey Barr.
-//  30 и 40 = Moore Hensley, Sharlene Bush, Blackburn Dotson, Sheree Anthony.
+
+/*
+'Briana Decker', = Sharlene Bush и Sheree Anthony.
+'Goldie Gentry', = Elma Head и Sheree Anthony.
+'Adrian Cross', = пустой массив.
+*/
 
 const users = [
   {
@@ -83,30 +87,23 @@ const users = [
   },
 ];
 
-console.log(getUsersWithAge(users, 20, 30));
-console.log(getUsersWithAge(users, 30, 40));
-console.log(getUsersWithAge(users, 80, 100));
-console.log(getUsersWithAge(users, 20, 24));
-console.log(getUsersWithAge(users, 35, 40));
+console.log(getUsersWithFriend(users, 'Briana Decker'));
+console.log(getUsersWithFriend(users, 'Goldie Gentry'));
+console.log(getUsersWithFriend(users, 'Adrian Cross'));
 
 /*
-Задача. Пользователи в возрастной категории
-Этот массив объектов мы будем передавать в параметр 
-users при вызове функции из задания.
-
-
 Задание
-Дополни функцию getUsersWithAge(users, minAge, maxAge) так, 
-чтобы она возвращала массив пользователей, возраст которых (свойство age) 
-попадает в промежуток от minAge до maxAge.
+Дополни функцию getUsersWithFriend(users, friendName) так, 
+чтобы она возвращала массив пользователей у которых есть друг 
+с именем в параметре friendName. Массив друзей пользователя хранится 
+в свойстве friends.
 
 Тесты
-Объявлена переменная getUsersWithAge.
-Переменной getUsersWithAge присвоена стрелочная функция с параметрами (users, minAge, maxAge).
+Объявлена переменная getUsersWithFriend.
+Переменной getUsersWithFriend присвоена стрелочная функция с параметрами (users, friendName).
 Для перебора параметра users используется метод filter().
-Если значение параметров minAge и maxAge равны 20 и 30 соотвественно, функция возвращает массив объектов пользователей с именами Ross Vazquez, Elma Head и Carey Barr.
-Если значение параметров minAge и maxAge равны 30 и 40 соотвественно, функция возвращает массив объектов пользователей с именами Moore Hensley, Sharlene Bush, Blackburn Dotson, Sheree Anthony.
-Если значение параметров minAge и maxAge равны 80 и 100 соотвественно, функция возвращает пустой массив.
+Если значение параметра friendName это строка 'Briana Decker', функция возвращает массив объектов пользователей с именами Sharlene Bush и Sheree Anthony.
+Если значение параметра friendName это строка 'Goldie Gentry', функция возвращает массив объектов пользователей с именами Elma Head и Sheree Anthony.
+Если значение параметра friendName это строка 'Adrian Cross', функция возвращает пустой массив.
 Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
-
 */

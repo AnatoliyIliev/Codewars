@@ -1,11 +1,14 @@
 // Пиши код ниже этой строки
-const calculateTotalBalance = users => {
-    const allTotal = users.reduce((total, user) => {
+const getTotalBalanceByGender = (users, gender) => {
+   return users.filter(user => user.gender === gender)
+    .reduce((total, user) => {
  	return total + user.balance;
     }, 0);
-    return allTotal;
 };
 // Пиши код выше этой строки
+
+//'male', функция возвращает число 12053.
+//'female', функция возвращает число 8863.
 
 const users = [
   {
@@ -48,7 +51,7 @@ const users = [
     name: 'Carey Barr',
     email: 'careybarr@nurali.com',
     eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
     isActive: true,
     balance: 3951,
     gender: 'male'
@@ -57,7 +60,7 @@ const users = [
     name: 'Blackburn Dotson',
     email: 'blackburndotson@furnigeer.com',
     eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
     isActive: false,
     balance: 1498,
     gender: 'male'
@@ -73,20 +76,27 @@ const users = [
   }
 ]
 
-console.log(calculateTotalBalance(users))
+// const gender = 'male'
+// console.log(getTotalBalanceByGender(users, gender))
 
+const gender = 'female'
+console.log(getTotalBalanceByGender(users, gender))
 /*
 
 Задание
-Дополни функцию calculateTotalBalance(users) так,
- чтобы она считала и возвращала сумму всех средств 
- (свойство balance) которые хранят пользователи из массива users.
+Дополни функцию getTotalBalanceByGender(users, gender) так, 
+чтобы она возвращала общий баланс пользователей (свойство balance), 
+пол которых (свойство gender) совпадает со значением параметра gender.
 
 Тесты
-Объявлена переменная calculateTotalBalance.
-Переменной calculateTotalBalance присвоена стрелочная функция с параметром (users).
-Для перебора параметра users используется метод reduce().
-Вызов функции с указанным массивом пользователей возвращает число 20916.
+Объявлена переменная getTotalBalanceByGender.
+Переменной getTotalBalanceByGender присвоена стрелочная функция
+ с параметрами (users, gender).
+
+В теле функции используется цепочка методов в правильном порядке.
+Значение параметра users не изменяется.
+Если значение параметра gender это строка 'male', функция возвращает число 12053.
+Если значение параметра gender это строка 'female', функция возвращает число 8863.
 Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
 
 */

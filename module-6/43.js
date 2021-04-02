@@ -1,11 +1,20 @@
 // Пиши код ниже этой строки
-const calculateTotalBalance = users => {
-    const allTotal = users.reduce((total, user) => {
- 	return total + user.balance;
-    }, 0);
-    return allTotal;
+const getSortedFriends = users => {
+   
+  return users.flatMap(user => [...user.friends])
+    .filter((user, index, array) => array.indexOf(user) === index).sort();
+  
+
+   
 };
 // Пиши код выше этой строки
+
+
+/*
+['Adrian Cross', 'Aisha Tran', 'Briana Decker', 'Eddie Strong', 
+ 'Goldie Gentry', 'Jacklyn Lucas', 'Jordan Sampson', 'Linda Chapman', 
+ 'Marilyn Mcintosh', 'Naomi Buckner', 'Padilla Garrison', 'Sharron Pace', 'Solomon Fokes']
+*/
 
 const users = [
   {
@@ -48,7 +57,7 @@ const users = [
     name: 'Carey Barr',
     email: 'careybarr@nurali.com',
     eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
     isActive: true,
     balance: 3951,
     gender: 'male'
@@ -57,7 +66,7 @@ const users = [
     name: 'Blackburn Dotson',
     email: 'blackburndotson@furnigeer.com',
     eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
     isActive: false,
     balance: 1498,
     gender: 'male'
@@ -73,20 +82,23 @@ const users = [
   }
 ]
 
-console.log(calculateTotalBalance(users))
-
+console.log(getSortedFriends(users));
 /*
 
 Задание
-Дополни функцию calculateTotalBalance(users) так,
- чтобы она считала и возвращала сумму всех средств 
- (свойство balance) которые хранят пользователи из массива users.
+Дополни функцию getSortedFriends(users) так, 
+чтобы она возвращала массив уникальных имён друзей (свойство friends) 
+отсортированный по алфавиту .
 
 Тесты
-Объявлена переменная calculateTotalBalance.
-Переменной calculateTotalBalance присвоена стрелочная функция с параметром (users).
-Для перебора параметра users используется метод reduce().
-Вызов функции с указанным массивом пользователей возвращает число 20916.
+Объявлена переменная getSortedFriends.
+Переменной getSortedFriends присвоена стрелочная функция с параметром (users).
+В теле функции используется цепочка методов в правильном порядке.
+Значение параметра users не изменяется.
+Вызов функции с указанным массивом пользователей возвращает массив
+ ['Adrian Cross', 'Aisha Tran', 'Briana Decker', 'Eddie Strong', 
+ 'Goldie Gentry', 'Jacklyn Lucas', 'Jordan Sampson', 'Linda Chapman', 
+ 'Marilyn Mcintosh', 'Naomi Buckner', 'Padilla Garrison', 'Sharron Pace', 'Solomon Fokes'].
 Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
 
 */

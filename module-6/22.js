@@ -1,17 +1,16 @@
 // Пиши код ниже этой строки
-const getFriends = users => {
-  let allFriends = []
-  users.filter((user) => allFriends.push(...user.friends));
-
-  return allFriends.filter((user, index, array) => array.indexOf(user) === index);
+const getActiveUsers = (users) => {
+ let allFriends = []
+   users.filter(user => {
+    if (user.isActive) {
+    allFriends.push(user)
+     }
+   });
+  return allFriends
 };
 // Пиши код выше этой строки
 
-/*
-['Sharron Pace', 'Briana Decker', 'Marilyn Mcintosh', 'Padilla Garrison', 
-'Naomi Buckner', 'Goldie Gentry', 'Aisha Tran', 'Jordan Sampson', 
-'Eddie Strong', 'Jacklyn Lucas', 'Linda Chapman'].
-*/
+// Sharlene Bush, Elma Head, Carey Barr и Sheree Anthony
 
 const users = [
   {
@@ -22,7 +21,7 @@ const users = [
     isActive: false,
     balance: 2811,
     gender: 'male',
-    age: 37,
+    age: 37
   },
   {
     name: 'Sharlene Bush',
@@ -32,7 +31,7 @@ const users = [
     isActive: true,
     balance: 3821,
     gender: 'female',
-    age: 34,
+    age: 34
   },
   {
     name: 'Ross Vazquez',
@@ -42,7 +41,7 @@ const users = [
     isActive: false,
     balance: 3793,
     gender: 'male',
-    age: 24,
+    age: 24
   },
   {
     name: 'Elma Head',
@@ -52,7 +51,7 @@ const users = [
     isActive: true,
     balance: 2278,
     gender: 'female',
-    age: 21,
+    age: 21
   },
   {
     name: 'Carey Barr',
@@ -62,7 +61,7 @@ const users = [
     isActive: true,
     balance: 3951,
     gender: 'male',
-    age: 27,
+    age: 27
   },
   {
     name: 'Blackburn Dotson',
@@ -72,7 +71,7 @@ const users = [
     isActive: false,
     balance: 1498,
     gender: 'male',
-    age: 38,
+    age: 38
   },
   {
     name: 'Sheree Anthony',
@@ -82,25 +81,24 @@ const users = [
     isActive: true,
     balance: 2764,
     gender: 'female',
-    age: 39,
-  },
-];
+    age: 39
+  }
+]
 
-console.log(getFriends(users));
+console.log(getActiveUsers(users));
 
 /*
 Задание
-Дополни функцию getFriends(users) так, 
-чтобы она возвращала массив друзей всех пользователей (свойство friends). 
-У нескольких пользователей могут быть одинаковые друзья, 
-сделай так чтобы возвращаемый массив не содержал повторений.
+Дополни функцию getActiveUsers(users) так, 
+чтобы она возвращала массив активных пользователей, 
+значение свойства isActive которых true.
 
 Тесты
-Объявлена переменная getFriends.
-Переменной getFriends присвоена стрелочная функция с параметром (users).
-Вызов функции с указанным массивом пользователей возвращает массив 
-['Sharron Pace', 'Briana Decker', 'Marilyn Mcintosh', 'Padilla Garrison', 
-'Naomi Buckner', 'Goldie Gentry', 'Aisha Tran', 'Jordan Sampson',
- 'Eddie Strong', 'Jacklyn Lucas', 'Linda Chapman'].
+Объявлена переменная getActiveUsers. 
+Переменной getActiveUsers присвоена стрелочная функция с параметром users.
+Для перебора параметра users используется метод filter().
+Вызов функции с указанным массивом пользователей возвращает 
+массив объектов пользователей с именами Sharlene Bush, Elma Head, Carey Barr и Sheree Anthony.
 Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
+
 */

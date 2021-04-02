@@ -1,17 +1,12 @@
 // Пиши код ниже этой строки
-const getFriends = users => {
-  let allFriends = []
-  users.filter((user) => allFriends.push(...user.friends));
-
-  return allFriends.filter((user, index, array) => array.indexOf(user) === index);
+const getTotalFriendCount = users => {
+    const allTotal = users.reduce((total, user) => {
+ 	return total + user.friends.length;
+    }, 0);
+    return allTotal;
+   
 };
 // Пиши код выше этой строки
-
-/*
-['Sharron Pace', 'Briana Decker', 'Marilyn Mcintosh', 'Padilla Garrison', 
-'Naomi Buckner', 'Goldie Gentry', 'Aisha Tran', 'Jordan Sampson', 
-'Eddie Strong', 'Jacklyn Lucas', 'Linda Chapman'].
-*/
 
 const users = [
   {
@@ -21,8 +16,7 @@ const users = [
     friends: ['Sharron Pace'],
     isActive: false,
     balance: 2811,
-    gender: 'male',
-    age: 37,
+    gender: 'male'
   },
   {
     name: 'Sharlene Bush',
@@ -31,8 +25,7 @@ const users = [
     friends: ['Briana Decker', 'Sharron Pace'],
     isActive: true,
     balance: 3821,
-    gender: 'female',
-    age: 34,
+    gender: 'female'
   },
   {
     name: 'Ross Vazquez',
@@ -41,8 +34,7 @@ const users = [
     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
     isActive: false,
     balance: 3793,
-    gender: 'male',
-    age: 24,
+    gender: 'male'
   },
   {
     name: 'Elma Head',
@@ -51,8 +43,7 @@ const users = [
     friends: ['Goldie Gentry', 'Aisha Tran'],
     isActive: true,
     balance: 2278,
-    gender: 'female',
-    age: 21,
+    gender: 'female'
   },
   {
     name: 'Carey Barr',
@@ -61,8 +52,7 @@ const users = [
     friends: ['Jordan Sampson', 'Eddie Strong'],
     isActive: true,
     balance: 3951,
-    gender: 'male',
-    age: 27,
+    gender: 'male'
   },
   {
     name: 'Blackburn Dotson',
@@ -71,8 +61,7 @@ const users = [
     friends: ['Jacklyn Lucas', 'Linda Chapman'],
     isActive: false,
     balance: 1498,
-    gender: 'male',
-    age: 38,
+    gender: 'male'
   },
   {
     name: 'Sheree Anthony',
@@ -81,26 +70,24 @@ const users = [
     friends: ['Goldie Gentry', 'Briana Decker'],
     isActive: true,
     balance: 2764,
-    gender: 'female',
-    age: 39,
-  },
-];
+    gender: 'female'
+  }
+]
+console.log(getTotalFriendCount(users));
 
-console.log(getFriends(users));
 
 /*
+
 Задание
-Дополни функцию getFriends(users) так, 
-чтобы она возвращала массив друзей всех пользователей (свойство friends). 
-У нескольких пользователей могут быть одинаковые друзья, 
-сделай так чтобы возвращаемый массив не содержал повторений.
+Дополни функцию getTotalFriendCount(users) так, 
+чтобы она считала и возвращала общее количество друзей 
+(свойство friends) всех пользователей из массива users.
 
 Тесты
-Объявлена переменная getFriends.
-Переменной getFriends присвоена стрелочная функция с параметром (users).
-Вызов функции с указанным массивом пользователей возвращает массив 
-['Sharron Pace', 'Briana Decker', 'Marilyn Mcintosh', 'Padilla Garrison', 
-'Naomi Buckner', 'Goldie Gentry', 'Aisha Tran', 'Jordan Sampson',
- 'Eddie Strong', 'Jacklyn Lucas', 'Linda Chapman'].
+Объявлена переменная getTotalFriendCount.
+Переменной getTotalFriendCount присвоена стрелочная функция с параметром (users).
+Для перебора параметра users используется метод reduce().
+Вызов функции с указанным массивом пользователей возвращает число 14
 Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
+
 */

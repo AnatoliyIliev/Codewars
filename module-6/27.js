@@ -1,17 +1,9 @@
 // Пиши код ниже этой строки
-const getFriends = users => {
-  let allFriends = []
-  users.filter((user) => allFriends.push(...user.friends));
-
-  return allFriends.filter((user, index, array) => array.indexOf(user) === index);
+const isEveryUserActive = (users) => {
+  return users.every(user => user.isActive); 
 };
 // Пиши код выше этой строки
 
-/*
-['Sharron Pace', 'Briana Decker', 'Marilyn Mcintosh', 'Padilla Garrison', 
-'Naomi Buckner', 'Goldie Gentry', 'Aisha Tran', 'Jordan Sampson', 
-'Eddie Strong', 'Jacklyn Lucas', 'Linda Chapman'].
-*/
 
 const users = [
   {
@@ -21,8 +13,7 @@ const users = [
     friends: ['Sharron Pace'],
     isActive: false,
     balance: 2811,
-    gender: 'male',
-    age: 37,
+    gender: 'male'
   },
   {
     name: 'Sharlene Bush',
@@ -31,8 +22,7 @@ const users = [
     friends: ['Briana Decker', 'Sharron Pace'],
     isActive: true,
     balance: 3821,
-    gender: 'female',
-    age: 34,
+    gender: 'female'
   },
   {
     name: 'Ross Vazquez',
@@ -41,8 +31,7 @@ const users = [
     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
     isActive: false,
     balance: 3793,
-    gender: 'male',
-    age: 24,
+    gender: 'male'
   },
   {
     name: 'Elma Head',
@@ -51,8 +40,7 @@ const users = [
     friends: ['Goldie Gentry', 'Aisha Tran'],
     isActive: true,
     balance: 2278,
-    gender: 'female',
-    age: 21,
+    gender: 'female'
   },
   {
     name: 'Carey Barr',
@@ -61,8 +49,7 @@ const users = [
     friends: ['Jordan Sampson', 'Eddie Strong'],
     isActive: true,
     balance: 3951,
-    gender: 'male',
-    age: 27,
+    gender: 'male'
   },
   {
     name: 'Blackburn Dotson',
@@ -71,8 +58,7 @@ const users = [
     friends: ['Jacklyn Lucas', 'Linda Chapman'],
     isActive: false,
     balance: 1498,
-    gender: 'male',
-    age: 38,
+    gender: 'male'
   },
   {
     name: 'Sheree Anthony',
@@ -81,26 +67,23 @@ const users = [
     friends: ['Goldie Gentry', 'Briana Decker'],
     isActive: true,
     balance: 2764,
-    gender: 'female',
-    age: 39,
-  },
-];
+    gender: 'female'
+  }
+]
 
-console.log(getFriends(users));
+console.log(isEveryUserActive(users))
 
-/*
+/* 
 Задание
-Дополни функцию getFriends(users) так, 
-чтобы она возвращала массив друзей всех пользователей (свойство friends). 
-У нескольких пользователей могут быть одинаковые друзья, 
-сделай так чтобы возвращаемый массив не содержал повторений.
+Дополни функцию isEveryUserActive(users) так,
+ чтобы она проверяла все ли пользователи сейчас 
+ активны (свойство isActive) и возвращала true или false.
 
 Тесты
-Объявлена переменная getFriends.
-Переменной getFriends присвоена стрелочная функция с параметром (users).
-Вызов функции с указанным массивом пользователей возвращает массив 
-['Sharron Pace', 'Briana Decker', 'Marilyn Mcintosh', 'Padilla Garrison', 
-'Naomi Buckner', 'Goldie Gentry', 'Aisha Tran', 'Jordan Sampson',
- 'Eddie Strong', 'Jacklyn Lucas', 'Linda Chapman'].
+Объявлена переменная isEveryUserActive
+Переменной isEveryUserActive присвоена стрелочная функция с параметром (users).
+Для перебора параметра users используется метод every().
+Вызов функции с указанным массивом пользователей возвращает false.
 Вызов функции со случайными, но валидными аргументами, возвращает правильное значение.
+
 */

@@ -1,10 +1,11 @@
 function list(names) {
-  if (!names) {
-    return '';
+  if (!names.length) {
+    // console.log(names);
+    return "''";
   } else {
     const newNames = names.map(name => name.name);
     if (names.length === 1) {
-      return name.name;
+      return newNames.join();
     } else {
       const lastName = newNames.pop();
       //   console.log(lastName);
@@ -25,7 +26,6 @@ console.log(
     { name: 'Marge' },
   ]),
 );
-
 //'Bart, Lisa, Maggie, Homer & Marge','Must work with many names',
 
 console.log(list([{ name: 'Bart' }, { name: 'Lisa' }, { name: 'Maggie' }]));
@@ -33,7 +33,7 @@ console.log(list([{ name: 'Bart' }, { name: 'Lisa' }, { name: 'Maggie' }]));
 
 console.log(list([{ name: 'Bart' }, { name: 'Lisa' }])); //'Bart & Lisa', 'Must work with two names',
 
-// list([{ name: 'Bart' }]); //'Bart', 'Wrong output for a single name  Неправильный вывод для одного имени',
+console.log(list([{ name: 'Bart' }])); //'Bart', 'Wrong output for a single name  Неправильный вывод для одного имени',
 
 console.log(list([])); // '', 'Must work with no names Должен работать со многими именами'
 

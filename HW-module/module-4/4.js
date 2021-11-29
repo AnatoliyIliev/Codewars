@@ -1,46 +1,24 @@
 const pizzaPalace = {
   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
   order(pizzaName, onSuccess, onError) {
-<<<<<<< HEAD
     if (!pizzaPalace.pizzas.includes(pizzaName)) {
-      return onError(`В ассортименте нет пиццы с названием ${pizzaName}.`)
-    } 
+      return onError(`В ассортименте нет пиццы с названием ${pizzaName}.`);
+    }
     return onSuccess(pizzaName);
   },
 };
-  
-=======
-    for (const pizza of pizzas) {
-      if (pizza !== pizzaName) {
-        onError(pizzaName);
-        return;
-      }
-    }
-  },
-};
-
 return `В ассортименте нет пиццы с названием ${pizzaName}.`;
->>>>>>> 32df6996d59ea276631dd1ed579da61569d181bf
+
 // Пиши код выше этой строки
 
 // Колбэк для onSuccess
 function makePizza(pizzaName) {
-<<<<<<< HEAD
-  console.log(`Ваш заказ принят. Готовим пиццу ${pizzaName}.`);
-  // return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
-=======
   return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
->>>>>>> 32df6996d59ea276631dd1ed579da61569d181bf
 }
 
 // Колбэк для onError
 function onOrderError(error) {
-<<<<<<< HEAD
-  console.log(`Ошибка! ${error}`);
-  // return `Ошибка! ${error}`;
-=======
   return `Ошибка! ${error}`;
->>>>>>> 32df6996d59ea276631dd1ed579da61569d181bf
 }
 
 // Вызовы метода с колбэками
@@ -50,11 +28,7 @@ pizzaPalace.order('Биг майк', makePizza, onOrderError);
 pizzaPalace.order('Венская', makePizza, onOrderError);
 
 /*
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 32df6996d59ea276631dd1ed579da61569d181bf
 Задание
 Необходимо написать логику обработки заказа пиццы. Выполни рефакторинг метода order так,
  чтобы он принимал вторым и третим параметрами два колбэка onSuccess и onError.

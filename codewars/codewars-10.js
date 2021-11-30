@@ -1,22 +1,20 @@
-function duplicateEncode(word){
-    const array = word.toLowerCase().split('');
-    // console.log(array)
-    let acc = '';
-    for(let i = 0; i < array.length; i += 1){
-        if (array.lastIndexOf(array[i]) === array.indexOf(array[i])) {
-            acc += "(";
-        } else{
-            acc += ")" ;
-        }              
+function duplicateEncode(word) {
+  const array = word.toLowerCase().split('');
+  let acc = '';
+  for (let i = 0; i < array.length; i += 1) {
+    if (array.lastIndexOf(array[i]) === array.indexOf(array[i])) {
+      acc += '(';
+    } else {
+      acc += ')';
     }
-    return acc
+  }
+  return acc;
 }
 
-console.log(duplicateEncode("din"))   //    (((
-console.log(duplicateEncode("recede"))  //   ()()()
-console.log(duplicateEncode("Success")) //   )())())    should ignore case
-console.log(duplicateEncode("(( @"))    //   ))((
-
+console.log(duplicateEncode('din')); //    (((
+console.log(duplicateEncode('recede')); //   ()()()
+console.log(duplicateEncode('Success')); //   )())())    should ignore case
+console.log(duplicateEncode('(( @')); //   ))((
 
 /*
 The goal of this exercise is to convert a string to 

@@ -1,17 +1,12 @@
 function list(names) {
   if (!names.length) {
-    // console.log(names);
-    return "''";
+    return '';
   } else {
     const newNames = names.map(name => name.name);
     if (names.length === 1) {
       return newNames.join();
     } else {
       const lastName = newNames.pop();
-      //   console.log(lastName);
-      //   console.log(lastName2);
-      //   const allNames = newNames.push(lastName2 $ lastName);
-      //   console.log(newNames.join(', '));
       return `${newNames.join(', ')} & ${lastName}`;
     }
   }

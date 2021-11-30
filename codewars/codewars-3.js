@@ -1,24 +1,23 @@
 function SeriesSum(n) {
   let fix = 1;
   let num = 1;
-  if (n === 1) {
-    return n.toFixed(2);
+  let number = 0.0;
+  if (n === 0 || n === 1) {
+    number = n.toFixed(2);
   } else {
     for (let i = 1; i < n; i += 1) {
-      // console.log(i);
       fix += 3;
-      // console.log(fix);
       num += 1 / fix;
-      // console.log(num);
     }
+    number = num.toFixed(2);
   }
-  console.log(num.toFixed(2));
-  return num.toFixed(2);
+  return number;
 }
 
-// SeriesSum(1); //=> 1 = "1.00"
-// SeriesSum(2); //=> 1 + 1/4 = "1.25"
-SeriesSum(5); //=> 1 + 1/4 + 1/7 + 1/10 + 1/13 = "1.57"
+console.log(SeriesSum(0));
+console.log(SeriesSum(1)); //=> 1 = "1.00"
+console.log(SeriesSum(2)); //=> 1 + 1/4 = "1.25"
+console.log(SeriesSum(5)); //=> 1 + 1/4 + 1/7 + 1/10 + 1/13 = "1.57"
 
 /*
 Задача:

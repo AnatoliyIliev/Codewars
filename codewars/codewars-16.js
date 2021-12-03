@@ -1,18 +1,17 @@
 function isPangram(string) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  const text = string.toLowerCase().split('');
-  let acc = 0;
-  //   const text = string.toLowerCase().split(' ').join('');
-  const find = text.forEach(t => {
-    for (let i = 0; i < alphabet.length; i += 1) {
-      if (t === alphabet[i]) {
-        acc += 1;
+  const text = string.toLowerCase().split(' ').join('').split('');
+  text.pop();
+
+  console.log(text);
+  const find = alphabet.some(alp => {
+    return text.find(t => {
+      if (alp === t) {
+        return;
       }
-    }
+    });
   });
-  console.log(acc);
-  if (acc === 26) return true;
-  else return false;
+  return find;
 }
 
 var string = 'The quick brown fox jumps over the lazy dog.';

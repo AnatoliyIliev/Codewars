@@ -7,8 +7,8 @@
     • **5 https://www.codewars.com/kata/convert-a-number-to-a-string
     • **6 https://www.codewars.com/kata/convert-a-string-to-a-number
     • **7 https://www.codewars.com/kata/convert-to-binary
-    • https://www.codewars.com/kata/even-or-odd
-    • https://www.codewars.com/kata/fake-binary/javascript
+    • **8 https://www.codewars.com/kata/even-or-odd
+    • **9 https://www.codewars.com/kata/fake-binary/javascript
     • https://www.codewars.com/kata/largest-square-inside-a-circle
     • https://www.codewars.com/kata/number-of-decimal-digits
     • https://www.codewars.com/kata/opposite-number

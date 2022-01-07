@@ -12,16 +12,16 @@
     • **9 https://www.codewars.com/kata/largest-square-inside-a-circle
     • **10 https://www.codewars.com/kata/number-of-decimal-digits
     • **11 https://www.codewars.com/kata/opposite-number
-    • https://www.codewars.com/kata/perimeter-sequence
-    • https://www.codewars.com/kata/remove-first-and-last-character
-    • https://www.codewars.com/kata/remove-string-spaces
-    • https://www.codewars.com/kata/string-ends-with
-    • https://www.codewars.com/kata/simple-multiplication
-    • https://www.codewars.com/kata/string-repeat
-    • https://www.codewars.com/kata/students-final-grade
-    • https://www.codewars.com/kata/switch-it-up
-    • https://www.codewars.com/kata/thinkful-logic-drills-traffic-light
-    • https://www.codewars.com/kata/third-angle-of-a-triangle
-    • https://www.codewars.com/kata/transportation-on-vacation
-    • https://www.codewars.com/kata/type-of-sum
-    • https://www.codewars.com/kata/will-you-make-it
+    • **12 https://www.codewars.com/kata/perimeter-sequence
+    • **13 https://www.codewars.com/kata/remove-first-and-last-character
+    • **14 https://www.codewars.com/kata/remove-string-spaces
+    • **15 https://www.codewars.com/kata/string-ends-with
+    • **16 https://www.codewars.com/kata/simple-multiplication
+    • **17 https://www.codewars.com/kata/string-repeat
+    • **18 https://www.codewars.com/kata/students-final-grade
+    • **19 https://www.codewars.com/kata/switch-it-up
+    • **20 https://www.codewars.com/kata/thinkful-logic-drills-traffic-light
+    • **21 https://www.codewars.com/kata/third-angle-of-a-triangle
+    • **22 https://www.codewars.com/kata/transportation-on-vacation
+    • **23 https://www.codewars.com/kata/type-of-sum
+    • **24 https://www.codewars.com/kata/will-you-make-it

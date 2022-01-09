@@ -1,6 +1,6 @@
 # Codewars -2
 
-    ** 8 kyu https://www.codewars.com/kata/take-an-arrow-to-the-knee-functionally
+    **1 8 kyu https://www.codewars.com/kata/take-an-arrow-to-the-knee-functionally
     ** 8 kyu https://www.codewars.com/kata/merge-two-sorted-arrays-into-one
     ** 7 kyu https://www.codewars.com/kata/16-plus-18-equals-214
     ** 7 kyu https://www.codewars.com/kata/add-property-to-every-object-in-array

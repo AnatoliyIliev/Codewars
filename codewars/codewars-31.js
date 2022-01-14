@@ -1,11 +1,16 @@
 function combine() {
-  //   console.log(arguments.length);
-  let arg = [...arguments];
-  console.log(arg);
-
-  //   console.log(Object.assign(...arguments));
-
-  //let result = arr.reduce((a,c) => (a[c.idBox] = (a[c.idBox] || 0) + c.price, a), {});
+  const arg = [...arguments];
+  let accum = {};
+  arg.map(a => {
+    for (let key in a) {
+      if (key in accum) {
+        accum[key] += a[key];
+      } else {
+        accum[key] = a[key];
+      }
+    }
+  });
+  return accum;
 }
 
 const objA = { a: 10, b: 20, c: 30 };

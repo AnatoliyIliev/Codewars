@@ -1,5 +1,9 @@
 function findMissing(arr1, arr2) {
-  // Your solution here
+  const array1 = arr1.sort((a, b) => a - b);
+  const array2 = arr2.sort((a, b) => a - b);
+  for (let i = 0; i < array1.length; i += 1) {
+    if (array1[i] !== array2[i]) return array1[i];
+  }
 }
 
 console.log(findMissing([1, 2, 3], [1, 3])); //, 2);

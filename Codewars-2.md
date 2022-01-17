@@ -7,7 +7,7 @@
     **5 7 kyu https://www.codewars.com/kata/colour-association
     **6 7 kyu https://www.codewars.com/kata/combine-objects
     **7 7 kyu https://www.codewars.com/kata/count-the-digit
-    ** 7 kyu https://www.codewars.com/kata/find-the-missing-element-between-two-arrays
+    **8 7 kyu https://www.codewars.com/kata/find-the-missing-element-between-two-arrays
     ** 7 kyu https://www.codewars.com/kata/get-decimal-part-of-the-given-number
     ** 7 kyu https://www.codewars.com/kata/maximum-triplet-sum-array-series-number-7
     ** 7 kyu https://www.codewars.com/kata/mylanguages

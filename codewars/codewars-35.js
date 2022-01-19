@@ -1,17 +1,22 @@
 function maxTriSum(numbers) {
-  let num = {};
+  let num = new Set(numbers);
+  let n = 0;
   numbers.forEach(number => {
-    if (number > 3) {
-      num += number;
+    if (Math.abs(number) >= 3) {
+      num.push(number);
     }
-    console.log(number);
   });
+  for (let i = 0; i < 3; i += 1) {
+    console.log(num[i]);
+    n += num[i];
+  }
+  return n;
 }
 
-console.log(maxTriSum([3, 2, 6, 8, 2, 3])); //, 17);
+// console.log(maxTriSum([3, 2, 6, 8, 2, 3])); //, 17);
 // console.log(maxTriSum([2, 9, 13, 10, 5, 2, 9, 5])); //, 32);
 // console.log(maxTriSum([2, 1, 8, 0, 6, 4, 8, 6, 2, 4])); //, 18);
-// console.log(maxTriSum([-3, -27, -4, -2, -27, -2])); //, -9);
+console.log(maxTriSum([-3, -27, -4, -2, -27, -2])); //, -9);
 // console.log(maxTriSum([-14, -12, -7, -42, -809, -14, -12])); //, -33);
 // console.log(maxTriSum([-13, -50, 57, 13, 67, -13, 57, 108, 67])); //, 232);
 // console.log(maxTriSum([-7, 12, -7, 29, -5, 0, -7, 0, 0, 29])); //, 41);

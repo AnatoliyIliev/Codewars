@@ -1,16 +1,14 @@
 function maxTriSum(numbers) {
-  let num = new Set(numbers);
-  let n = 0;
-  numbers.forEach(number => {
-    if (Math.abs(number) >= 3) {
-      num.push(number);
-    }
-  });
-  for (let i = 0; i < 3; i += 1) {
-    console.log(num[i]);
-    n += num[i];
-  }
-  return n;
+  let a = numbers.filter((number, idx) => numbers.indexOf(number) === idx);
+  console.log(a);
+  let b = a.filter(n => n >= 3);
+  console.log(b);
+
+  // return numbers
+  //   .filter((number, idx) => numbers.indexOf(number) === idx)
+  //   .filter(n => Math.abs(n) >= 3)
+  //   .slice(0, 3)
+  //   .reduce((previousValue, currentValue) => previousValue + currentValue);
 }
 
 // console.log(maxTriSum([3, 2, 6, 8, 2, 3])); //, 17);

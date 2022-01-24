@@ -1,9 +1,10 @@
 function nicknameGenerator(name) {
   const letter = 'aeiou';
-  let result = name[2];
-
-  return result;
-  //code goes here
+  if (name.length <= 3) {
+    return 'Error: Name too short';
+  } else {
+    return letter.includes(name[2]) ? name.slice(0, 4) : name.slice(0, 3);
+  }
 }
 
 console.log(nicknameGenerator('Jimmy')); // 'Jim');
@@ -12,6 +13,7 @@ console.log(nicknameGenerator('Sam')); // 'Error: Name too short');
 console.log(nicknameGenerator('Kayne')); // 'Kay', "'y' is not a vowel");
 console.log(nicknameGenerator('Melissa')); // 'Mel');
 console.log(nicknameGenerator('James')); // 'Jam');
+console.log(nicknameGenerator('Jaemes')); // 'Jamm');
 
 /*
 Nickname Generator

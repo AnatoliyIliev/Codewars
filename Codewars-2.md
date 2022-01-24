@@ -12,7 +12,7 @@
     **10 7 kyu https://www.codewars.com/kata/maximum-triplet-sum-array-series-number-7
     **11 7 kyu https://www.codewars.com/kata/mylanguages
     **12 7 kyu https://www.codewars.com/kata/nickname-generator
-    ** 7 kyu https://www.codewars.com/kata/odd-even-string-sort
+    **13 7 kyu https://www.codewars.com/kata/odd-even-string-sort
     ** 7 kyu https://www.codewars.com/kata/power-of-two
     ** 7 kyu https://www.codewars.com/kata/string-reordering
     ** 7 kyu https://www.codewars.com/kata/sum-with-arrows/

@@ -13,7 +13,7 @@
     **11 7 kyu https://www.codewars.com/kata/mylanguages
     **12 7 kyu https://www.codewars.com/kata/nickname-generator
     **13 7 kyu https://www.codewars.com/kata/odd-even-string-sort
-    ** 7 kyu https://www.codewars.com/kata/power-of-two
+    **14 7 kyu https://www.codewars.com/kata/power-of-two
     ** 7 kyu https://www.codewars.com/kata/string-reordering
     ** 7 kyu https://www.codewars.com/kata/sum-with-arrows/
     ** 7 kyu https://www.codewars.com/kata/unpacking-arguments

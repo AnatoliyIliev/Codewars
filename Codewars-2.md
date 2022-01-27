@@ -18,5 +18,5 @@
     **16 7 kyu https://www.codewars.com/kata/sum-with-arrows/
     **17 7 kyu https://www.codewars.com/kata/unpacking-arguments
     **18 7 kyu https://www.codewars.com/kata/vowel-one
-    ** 7 kyu https://www.codewars.com/kata/who-is-the-killer-1
+    **19 7 kyu https://www.codewars.com/kata/who-is-the-killer-1
     ** 6 kyu https://www.codewars.com/kata/data-reverse

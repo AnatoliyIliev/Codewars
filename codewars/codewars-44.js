@@ -1,13 +1,12 @@
 function killer(suspectInfo, dead) {
-  //   console.log(suspectInfo);
-  //   console.log(dead);
-  return Object.values(suspectInfo).map(a => {
-    a.map(b => {
-      console.log(b);
-      //   console.log(dead);
-      return dead.includes(b) ? a : 'no';
+  let obj = {};
+  Object.keys(suspectInfo).forEach(a => {
+    obj[a] = 0;
+    suspectInfo[a].forEach(b => {
+      dead.includes(b) ? (obj[a] += 1) : 0;
     });
   });
+  return Object.keys(obj).sort((a, b) => obj[b] - obj[a])[0];
 }
 
 console.log(

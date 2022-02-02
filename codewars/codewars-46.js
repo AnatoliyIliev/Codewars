@@ -1,24 +1,30 @@
-function strCount(obj) {
+function strCount(arr) {
   let res = 0;
-  Object.values(obj).forEach(a => {
-    if (Array.isArray(a)) {
-      console.log('Array -->', a);
-      if (a !== 0) {
-        a.forEach(b => {
-          if (typeof b === 'string') {
-            console.log('string -->', b);
-            res += 1;
-          }
-        });
-      }
-    } else if (typeof a === 'string') {
+  const non = [false, true, null, undefined, NaN];
+  if (!non.includes(arr)) {
+    if (Array.isArray(arr)) {
+      arry(arr);
+    } else if (typeof arr === 'string') {
       res += 1;
-    } else if (typeof a === 'object') {
-      console.log('object -->', a);
-      // console.log(Object.values(a));
+    } else if (typeof arr === 'object') {
+      arry(Object.values(arr));
     }
-  });
-  return res;
+    return res;
+  }
+
+  function arry(array) {
+    array.forEach(b => {
+      if (typeof b === 'string') {
+        res += 1;
+      } else if (Array.isArray(b)) {
+        arry(b);
+      } else if (typeof b === 'object') {
+        if (b) {
+          arry(Object.values(b));
+        }
+      }
+    });
+  }
 }
 
 console.log(
@@ -29,85 +35,17 @@ console.log(
     fourth: ['anytime', 2, 3, 4],
     fifth: null,
     sixth: undefined,
-    seventh: { three: 'z', four: 'd' },
+    seventh: { three: 'z', four: 'd', five: ['anytime', 2, 3, 4] },
     eight: [1, 2, 3, 4, '0', { one: 'a', two: 's' }],
     ten: ['and another', 2, 'and again', [undefined, 'and again'], false],
     eleven: {},
   }),
-); //,11,"Did not count the correct number of strings. Check counting inside nested objects.");
+); //,12,"Did not count the correct number of strings. Check counting inside nested objects.");
 
-/*
-console.log(strCount({{
-  first: '1',
-  second: '2',
-  third: false,
-  fourth: [ 'anytime', 2, 3, 4 ],
-  fifth: null,
-  sixth: undefined,
-  seventh: {}
-}
-[ '1', 2, '3', '4' ]
-[
-  '1',
-  2,
-  '3',
-  [ 'and another', 2, 'and again', [ undefined, 'and again' ], false ],
-  '4'
-]})); //expected 5 to equal 6
+console.log(
+  strCount(['and another', 2, 'and again', [undefined, 'and again'], false]),
+);
 
-console.log(strCount({[
-  'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin',
-  'strin'
-]
-[
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin', 'strin', 'strin', 'strin',
-  'strin'
-]
-[
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin',
-  [ 1, 2, 3, 4, '0', { one: 'a', two: 's' } ],
-  'strin'
-]})); //expected 25 to equal 49
-*/
 /*
 Create a function strCount (takes an object as argument) that will count all string values inside an object. For example:
 
@@ -119,23 +57,15 @@ strCount({
   fifth:  null
   })
   //returns 3
+*/
 
-
-
-    //   let res = 0;
-  //   Object.values(obj).forEach(a => {
-  //     if (typeof a === 'object') {
-  //       console.log(a);
-  //       if (a !== 0) {
-  //         a.forEach(b => {
-  //           if (typeof b === 'string') {
-  //             res += 1;
-  //           }
-  //         });
-  //       }
-  //     } else if (typeof a === 'string') {
-  //       res += 1;
-  //     }
-  //   });
-  //   return res;
+/*
+  function strCount(obj){
+  let count = 0;
+  for (key in obj) {
+    if (typeof obj[key] == 'string') count++;
+    if (typeof obj[key] == 'object') count += strCount(obj[key]);
+  }
+  return count;
+}
 */

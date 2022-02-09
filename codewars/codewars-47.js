@@ -25,27 +25,20 @@
 // convert('1010', '01', '0123456789'); // should return "10"
 // convert('1010', '01', '0123456789abcdef'); // should return "a"
 
-function convert(input, source, target) {
-  if (source === target) {
-    return input;
-  }
-  let sourceValue = input
-    .split('')
-    .reverse()
-    .reduce((acc, val, digitPos) => {
-      return acc + Math.pow(source.length, digitPos) * source.indexOf(val);
-    }, 0);
 
-  if (sourceValue === 0) {
-    return target[0];
-  }
-  let targetValue = '';
-  while (sourceValue > 0) {
-    targetValue += target[sourceValue % target.length];
-    sourceValue = Math.floor(sourceValue / target.length);
-  }
-  return targetValue.split('').reverse().join('');
-}
+def convert(input, source, target):
+    base_in = len(source)
+    base_out = len(target)
+    acc = 0
+    out = ''
+    for d in input:
+        acc *= base_in
+        acc += source.index(d)
+    while acc != 0:
+        d = target[acc%base_out]
+        acc = acc/base_out
+        out = d+out
+    return out if out else target[0]
 
 var Alphabet = {
   BINARY: '01',

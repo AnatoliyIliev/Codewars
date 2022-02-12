@@ -1,6 +1,37 @@
 function getCard() {
-  // Start your coding here...
+  const bingoB = bingoRandom(1, 15, 'B', 5);
+  const bingoI = bingoRandom(16, 30, 'I', 5);
+  const bingoN = bingoRandom(31, 45, 'N', 4);
+  const bingoG = bingoRandom(46, 60, 'G', 5);
+  const bingoO = bingoRandom(61, 75, 'O', 5);
+
+  console.log({ ...bingoB, ...bingoI, ...bingoN, ...bingoG, ...bingoO });
 }
+
+function bingoRandom(min, max, card, num) {
+  let arr = [];
+
+  for (let i = 0; i < max; i += 1) {
+    let randomRes = Math.round(Math.random() * max + 1);
+    arr.push(randomRes);
+  }
+
+  return filterNumber(min, arr, card, num);
+}
+
+function filterNumber(min, arr, card, num) {
+  let filterNum = arr
+    .filter((a, idx) => arr.indexOf(a) === idx)
+    .filter(num => num > min)
+    .slice(0, num);
+  return connectNumAndLet(filterNum, card);
+}
+
+function connectNumAndLet(filterNum, card) {
+  return filterNum.map(num => card + num);
+}
+
+getCard();
 
 /*
 After yet another dispute on their game the Bingo Association decides to change course and automate the game.

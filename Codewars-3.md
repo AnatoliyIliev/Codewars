@@ -4,7 +4,7 @@
     ** 6 kyu https://www.codewars.com/kata/base-conversion
     **2 6 kyu https://www.codewars.com/kata/bingo-card
     **3 6 kyu https://www.codewars.com/kata/bit-counting
-    ** 6+ kyu https://www.codewars.com/kata/clocky-mc-clock-face
+    ** 6 kyu https://www.codewars.com/kata/clocky-mc-clock-face
     ** 6 kyu https://www.codewars.com/kata/is-a-number-prime
     ** 6 kyu https://www.codewars.com/kata/lottery-ticket
     ** 6 kyu https://www.codewars.com/kata/weird-string-case

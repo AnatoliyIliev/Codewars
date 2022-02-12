@@ -5,7 +5,7 @@ function getCard() {
   const bingoG = bingoRandom(46, 60, 'G', 5);
   const bingoO = bingoRandom(61, 75, 'O', 5);
 
-  console.log({ ...bingoB, ...bingoI, ...bingoN, ...bingoG, ...bingoO });
+  return { ...[...bingoB, ...bingoI, ...bingoN, ...bingoG, ...bingoO] };
 }
 
 function bingoRandom(min, max, card, num) {

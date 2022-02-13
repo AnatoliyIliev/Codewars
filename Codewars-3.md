@@ -6,7 +6,7 @@
     **3 6 kyu https://www.codewars.com/kata/bit-counting
     **4 6 kyu https://www.codewars.com/kata/clocky-mc-clock-face
     **5 6 kyu https://www.codewars.com/kata/is-a-number-prime
-    ** 6 kyu https://www.codewars.com/kata/lottery-ticket
-    ** 6 kyu https://www.codewars.com/kata/weird-string-case
+    **6 6 kyu https://www.codewars.com/kata/lottery-ticket
+    **7 6 kyu https://www.codewars.com/kata/weird-string-case
     **8 6 kyu https://www.codewars.com/kata/who-likes-it
     ** 5 kyu https://www.codewars.com/kata/rgb-to-hex-conversion

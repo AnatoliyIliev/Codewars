@@ -3,15 +3,9 @@ function bingo(ticket, win) {
     let lef = arr[0].split('').filter(a => a.charCodeAt() === arr[1]);
     return lef.length;
   });
-  return fil.length === win ? 'Winner!' : 'Loser!';
+  return fil.length >= win ? 'Winner!' : 'Loser!';
 }
 
-// KDKDNGF,71,MJF,66,URZVGQKV,78,BU,66 and 2   Expected: 'Winner!', instead got: 'Loser!'
-
-// NWZRZE,80,IMOLZND,66,AWH,69,HWNJYD,74,LXR,81,ULTSSALP,79,DCS,76,QPHAENX,69,PLK,82 and 1  Expected: 'Winner!', instead got: 'Loser!'
-
-// Testing for MPZNQO,66,NUSKNVJ,75,KG,69,MTWGCRA,71,AUKQF,77 and 1
-// It should work for random inputs too - Expected: 'Winner!', instead got: 'Loser!'
 console.log(
   bingo(
     [

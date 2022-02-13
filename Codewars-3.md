@@ -9,4 +9,4 @@
     **6 6 kyu https://www.codewars.com/kata/lottery-ticket
     **7 6 kyu https://www.codewars.com/kata/weird-string-case
     **8 6 kyu https://www.codewars.com/kata/who-likes-it
-    ** 5 kyu https://www.codewars.com/kata/rgb-to-hex-conversion
+    **9 5 kyu https://www.codewars.com/kata/rgb-to-hex-conversion

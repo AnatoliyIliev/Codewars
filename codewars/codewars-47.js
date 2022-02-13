@@ -20,25 +20,34 @@
 //     '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
 // };
 
-// convert('15', '0123456789', '01'); // should return "1111"
+// convert('15', '0123456789', '01'); // should return 1111', '"15" dec -> bin');
 // convert('15', '0123456789', '01234567'); // should return "17"
 // convert('1010', '01', '0123456789'); // should return "10"
 // convert('1010', '01', '0123456789abcdef'); // should return "a"
+// convert('hello', 'abcdefghijklmnopqrstuvwxyz', '0123456789abcdef'); // should return "320048"
 
+function convert(input, source, target) {
+  if (source === target) {
+    return input;
+  }
+  let value = input
+    .split('')
+    .reverse()
+    .reduce((acc, val, idx) => {
+      return acc + Math.pow(source.length, idx) * source.indexOf(val);
+    }, 0);
 
-def convert(input, source, target):
-    base_in = len(source)
-    base_out = len(target)
-    acc = 0
-    out = ''
-    for d in input:
-        acc *= base_in
-        acc += source.index(d)
-    while acc != 0:
-        d = target[acc%base_out]
-        acc = acc/base_out
-        out = d+out
-    return out if out else target[0]
+  if (value === 0) {
+    return target[0];
+  }
+
+  let result = '';
+  while (value > 0) {
+    result += target[value % target.length];
+    value = Math.floor(value / target.length);
+  }
+  return result.split('').reverse().join('');
+}
 
 var Alphabet = {
   BINARY: '01',
@@ -61,15 +70,15 @@ var bin = Alphabet.BINARY,
   alpha = Alphabet.ALPHA,
   alnum = Alphabet.ALPHA_NUMERIC;
 
-console.log(convert('15', dec, bin)); // '1111', '"15" dec -> bin');
+// console.log(convert('15', dec, bin)); // '1111', '"15" dec -> bin');
 // console.log(convert('15', dec, oct)); // '17', '"15" dec -> oct');
 // console.log(convert('1010', bin, dec)); // '10', '"1010" bin -> dec');
 // console.log(convert('1010', bin, hex)); // 'a', '"1010" bin -> hex');
 
-// console.log(convert('0', dec, alpha)); // 'a', '"0" dec -> alpha');
-// console.log(convert('27', dec, allow)); // 'bb', '"27" dec -> alpha_lower');
-// console.log(convert('hello', allow, hex)); // '320048', '"hello" alpha_lower -> hex')
-// console.log(convert('SAME', alup, alup)); // 'SAME', '"SAME" alpha_upper -> alpha_upper');
+console.log(convert('0', dec, alpha)); // 'a', '"0" dec -> alpha');
+console.log(convert('27', dec, allow)); // 'bb', '"27" dec -> alpha_lower');
+console.log(convert('hello', allow, hex)); // '320048', '"hello" alpha_lower -> hex')
+console.log(convert('SAME', alup, alup)); // 'SAME', '"SAME" alpha_upper -> alpha_upper');
 
 /*
 In this kata you have to implement a base converter, which converts positive integers between arbitrary bases / alphabets. Here are some pre-defined alphabets:

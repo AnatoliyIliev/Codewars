@@ -8,8 +8,8 @@
 - 7 \*15\* kyu https://www.codewars.com/kata/jaden-casing-strings
 - 7 \*58\* kyu https://www.codewars.com/kata/disemvowel-trolls
 - 7 \*59\* kyu https://www.codewars.com/kata/isograms
-- 7 \*\* kyu https://www.codewars.com/kata/nickname-generator
-- 7 \*\* kyu https://www.codewars.com/kata/digits-explosion
+- 7 \*37\* kyu https://www.codewars.com/kata/nickname-generator
+- 7 \*60\* kyu https://www.codewars.com/kata/digits-explosion
 - 6 \*\* kyu https://www.codewars.com/kata/handshake-problem
 - 6 \*\* kyu https://www.codewars.com/kata/reverse-or-rotate
 - 6 \*\* kyu https://www.codewars.com/kata/multiples-of-3-or-5

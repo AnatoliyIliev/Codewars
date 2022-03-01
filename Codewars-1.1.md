@@ -5,9 +5,9 @@
 - 7 \*55\* kyu https://www.codewars.com/kata/absent-vowel
 - 7 \*56\* kyu https://www.codewars.com/kata/get-the-middle-character
 - 7 \*57\* kyu https://www.codewars.com/kata/highest-and-lowest
-- 7 \*\* kyu https://www.codewars.com/kata/jaden-casing-strings
-- 7 \*\* kyu https://www.codewars.com/kata/disemvowel-trolls
-- 7 \*\* kyu https://www.codewars.com/kata/isograms
+- 7 \*15\* kyu https://www.codewars.com/kata/jaden-casing-strings
+- 7 \*58\* kyu https://www.codewars.com/kata/disemvowel-trolls
+- 7 \*59\* kyu https://www.codewars.com/kata/isograms
 - 7 \*\* kyu https://www.codewars.com/kata/nickname-generator
 - 7 \*\* kyu https://www.codewars.com/kata/digits-explosion
 - 6 \*\* kyu https://www.codewars.com/kata/handshake-problem

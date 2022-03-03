@@ -1,17 +1,24 @@
 function getParticipants(handshakes) {
-  if (handshakes === 0) return 1;
-  else {
-    if (handshakes % 2 === 0) return handshakes / 2 + 1;
-    else return Math.floor(handshakes / 2) + 2;
+  let result = 1;
+  for (let i = 0; i < handshakes; ) {
+    i += result;
+    result += 1;
   }
+  return result;
 }
+
 console.log(getParticipants(0)); // 1
 console.log(getParticipants(1)); // 2
 console.log(getParticipants(3)); // 3
 console.log(getParticipants(6)); // 4
 console.log(getParticipants(7)); // 5
-console.log(getParticipants(78)); // 13
-console.log(getParticipants(76245)); // 391
+console.log(getParticipants(78)); //  13
+console.log(getParticipants(42778)); //  293
+
+/*
+1, 2, 3, 4, 5, 6, 7,  8,  9,  10, 11, 12, 13,
+0, 1, 3, 6, 7,                            78,
+*/
 
 /*
 Johnny is a farmer and he annually holds a beet farmers convention "Drop the beet".

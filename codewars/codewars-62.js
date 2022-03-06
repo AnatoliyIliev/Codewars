@@ -1,24 +1,33 @@
 function revrot(str, sz) {
   let strToArr = str.split('');
-  const count = Math.round(str.length / sz);
+  console.log(strToArr);
+  const count = Math.floor(str.length / sz);
   let newArr = [];
 
   if (str.length < sz || sz === 0) return '';
   else {
+    let counter = 0;
     for (let i = 0; i < count; i += 1) {
-      newArr.push(strToArr.slice(i, sz));
+      newArr.push(strToArr.slice(counter, sz + counter));
+      counter += sz;
     }
+
+    newArr.map(arr => {
+      const check =
+        arr.reduce((prev, current) => prev + current ** 3, 0) % 2 === 0;
+      console.log(check);
+    });
+
     console.log(count);
     console.log(newArr);
-    console.log(strToArr);
   }
 }
 
 // console.log(revrot('1234', 0)); // ""
 // console.log(revrot('', 0)); // ""
 // console.log(revrot('1234', 5)); // ""
-console.log(revrot('733049910872815764', 5)); // "330479108928157"
-// console.log(revrot('563000655734469485', 4)); // "0365065073456944"
+// console.log(revrot('733049910872815764', 5)); // "330479108928157"
+console.log(revrot('563000655734469485', 4)); // "0365065073456944"
 
 /*
 The input is a string str of digits. Cut the string into chunks 

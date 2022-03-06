@@ -1,6 +1,5 @@
 function revrot(str, sz) {
   let strToArr = str.split('');
-  console.log(strToArr);
   const count = Math.floor(str.length / sz);
   let newArr = [];
 
@@ -9,18 +8,18 @@ function revrot(str, sz) {
     let counter = 0;
     for (let i = 0; i < count; i += 1) {
       newArr.push(strToArr.slice(counter, sz + counter));
+      const check =
+        newArr[i].reduce((prev, current) => prev + current ** 3, 0) % 2 === 0;
+      if (check) {
+        newArr[i].reverse();
+      } else {
+        const shiftFirstNum = newArr[i].shift();
+        newArr[i].push(shiftFirstNum);
+      }
       counter += sz;
     }
-
-    newArr.map(arr => {
-      const check =
-        arr.reduce((prev, current) => prev + current ** 3, 0) % 2 === 0;
-      console.log(check);
-    });
-
-    console.log(count);
-    console.log(newArr);
   }
+  return newArr.map(a => a.join('')).join('');
 }
 
 // console.log(revrot('1234', 0)); // ""

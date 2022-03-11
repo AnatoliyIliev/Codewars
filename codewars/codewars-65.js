@@ -5,7 +5,6 @@ function deepCount(a) {
     count += obj.length;
     obj.forEach(obj => {
       if (typeof obj === 'object') {
-        //   console.log(typeof obj);
         check(obj);
       }
     });

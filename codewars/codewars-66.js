@@ -1,17 +1,23 @@
 var validWord = function (dictionary, word) {
-  let result = '';
-  const arrWord = word.split('');
+  let initialValue = '';
   for (let i = 0; i < dictionary.length; i += 1) {
-    for (let j = 0; j < word.length; j += 1) {
-      // console.log(dictionary[i].includes(word.slice(0, j)));
-      if (dictionary[i].includes(word.slice(0, j))) {
-        result = word.slice(0, j);
-        console.log(result);
-      }
-    }
-    // console.log(arrWord);
-    // return result;
+    let result = word
+      .split('')
+      .reduce((previousValue, currentValue, idx, arr) => {
+        console.log(previousValue);
+        console.log(currentValue);
+        if (dictionary[i].includes(previousValue)) {
+          initialValue += previousValue;
+          // console.log(previousValue);
+        } else previousValue + currentValue;
+
+        return currentValue;
+      }, initialValue);
+
+    // console.log(result);
   }
+
+  // console.log(initialValue);
 };
 
 // console.log(validWord(['code', 'wars'], 'codewars')); //, true]);
@@ -87,4 +93,38 @@ var validWord = function (dictionary, word) {
   else if (dictionary.join('') === word) return true;
   // else return false;
 };
+
+var validWord = function (dictionary, word) {
+  let result = '';
+  // const arrWord = word.split('');
+  for (let i = 0; i < dictionary.length; i += 1) {
+    for (let j = 0; j < word.length; j += 1) {
+      // console.log(dictionary[i].includes(word.slice(0, j)));
+      if (dictionary[i].includes(word.slice(0, j))) {
+        result = word.slice(0, j);
+        console.log(word.slice(j));
+        word = word.slice(j);
+        // for(let h = 0; h < j; h += 1){
+        //   word.
+        // }
+        // console.log(word);
+      } else 
+    }
+    // console.log(arrWord);
+    // return result;
+  }
+};
+
+
+  // for (let i = 0; i < dictionary.length; i += 1) {
+  //   let result = word
+  //     .split('')
+  //     .reduce((previousValue, currentValue, idx, arr) => {
+  //       if (dictionary[i].includes(previousValue)) {
+  //         console.log(previousValue);
+  //         previousValue + currentValue;
+  //       }
+  //     }, '');
+  //   console.log(result);
+  // }
 */

@@ -1,28 +1,24 @@
 var validWord = function (dictionary, word) {
-  let initialValue = '';
-  for (let i = 0; i < dictionary.length; i += 1) {
-    let result = word
-      .split('')
-      .reduce((previousValue, currentValue, idx, arr) => {
-        console.log(previousValue);
-        console.log(currentValue);
-        if (dictionary[i].includes(previousValue)) {
-          initialValue += previousValue;
-          // console.log(previousValue);
-        } else previousValue + currentValue;
+  let result = [];
+  const arrWord = word.split('');
 
-        return currentValue;
-      }, initialValue);
-
-    // console.log(result);
+  for (let j = 1; j < word.length + 1; j += 1) {
+    console.log(arrWord);
+    // console.log(word.slice(0, j));
+    console.log(arrWord.join('').slice(0, j));
+    if (dictionary.includes(arrWord.join('').slice(0, j))) {
+      console.log(arrWord.join('').slice(0, j));
+      result.push(arrWord.splice(0, j));
+      console.log(result);
+    }
   }
-
-  // console.log(initialValue);
+  console.log(result.join());
+  return result.map(a => a.join('')).join('') === word ? true : false;
 };
 
 // console.log(validWord(['code', 'wars'], 'codewars')); //, true]);
 // console.log(validWord(['wars', 'code'], 'codewars')); //, true]);
-// console.log(validWord(['code', 'wars'], 'codecodewars')); //, true]);
+console.log(validWord(['code', 'wars'], 'codecodewars')); //, true]);
 // console.log(validWord(['code', 'wars'], 'codewar')); //, false]);
 // console.log(validWord(['code', 'wars'], 'codewarscode')); //, true]);
 // console.log(validWord(['code', 'star', 'wars'], 'starwars')); //, true]);
@@ -33,7 +29,7 @@ var validWord = function (dictionary, word) {
 // console.log(validWord(['code', 'wars'], 'code')); //, true]);
 // console.log(validWord(['a', 'b', 'c', 'd', 'e', 'f'], 'abcdef')); //, true]);
 // console.log(validWord(['a', 'b', 'c', 'd', 'e', 'f'], 'abcdefg')); //, false]);
-console.log(validWord(['ab', 'a', 'bc'], 'abc')); //, true]);
+// console.log(validWord(['ab', 'a', 'bc'], 'abc')); //, true]);
 // console.log(validWord(['ab', 'bc'], 'abc')); //, false]);
 // console.log(
 //   validWord(
@@ -73,58 +69,26 @@ s1:         "codewars" =>  true  -> match 'code', 'wars'
 s2:         "codewar"  =>  false -> match 'code', unmatched 'war'
 One word from the dictionary can be used several times.
 
-
 var validWord = function (dictionary, word) {
-  let spl = word;
-  dictionary.forEach(w => {
-    spl = spl.split(w).join('');
-  });
-  return spl ? false : true;
-};
+  let result = [];
+  const strWord = word;
+  const arrWord = word.split('');
 
-
-var validWord = function (dictionary, word) {
-  let spl = word;
-  dictionary.forEach(w => {
-    spl = spl.split(w).join('');
-  });
-
-  if (!spl) return true;
-  else if (dictionary.join('') === word) return true;
-  // else return false;
-};
-
-var validWord = function (dictionary, word) {
-  let result = '';
-  // const arrWord = word.split('');
   for (let i = 0; i < dictionary.length; i += 1) {
-    for (let j = 0; j < word.length; j += 1) {
-      // console.log(dictionary[i].includes(word.slice(0, j)));
-      if (dictionary[i].includes(word.slice(0, j))) {
-        result = word.slice(0, j);
-        console.log(word.slice(j));
-        word = word.slice(j);
-        // for(let h = 0; h < j; h += 1){
-        //   word.
-        // }
-        // console.log(word);
-      } else 
+    // let sec = 0;
+    for (let j = 1; j < arrWord.length + 1; j += 1) {
+      console.log(strWord.slice(0, j));
+      if (dictionary.includes(strWord.slice(0, j))) {
+        console.log(dictionary, '=', arrWord.slice(0, j));
+        result.push(arrWord.splice(0, j));
+        console.log(result);
+        // sec += 1;
+      } else {
+        // sec = 0;
+      }
     }
-    // console.log(arrWord);
-    // return result;
   }
+  console.log(arrWord);
+  return result;
 };
-
-
-  // for (let i = 0; i < dictionary.length; i += 1) {
-  //   let result = word
-  //     .split('')
-  //     .reduce((previousValue, currentValue, idx, arr) => {
-  //       if (dictionary[i].includes(previousValue)) {
-  //         console.log(previousValue);
-  //         previousValue + currentValue;
-  //       }
-  //     }, '');
-  //   console.log(result);
-  // }
 */

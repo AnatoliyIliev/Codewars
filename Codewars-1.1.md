@@ -22,7 +22,7 @@
 - 7 \*64\* kyu https://www.codewars.com/kata/head-tail-init-and-last
 - 6 \*65\* kyu https://www.codewars.com/kata/array-deep-count
 - 6 \*66\* kyu https://www.codewars.com/kata/valid-string
-- 6 \*\* kyu https://www.codewars.com/kata/sorting-by-bits
+- 6 \*67\* kyu https://www.codewars.com/kata/sorting-by-bits
 
 - 6 \*\* kyu https://www.codewars.com/kata/length-of-missing-array
 - 6 \*\* kyu https://www.codewars.com/kata/pair-of-gloves

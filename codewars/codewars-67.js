@@ -1,9 +1,20 @@
 function sortByBit(arr) {
-  return arr.map(a => {
-    return a
-      .toString(2)
-      .split('')
-      .reduce((a, b) => Number(a) + Number(b));
+  return arr.sort((a, b) => {
+    let aSort = Number(
+      a
+        .toString(2)
+        .split('')
+        .reduce((pre, cur) => Number(pre) + Number(cur)),
+    );
+
+    let bSort = Number(
+      b
+        .toString(2)
+        .split('')
+        .reduce((pre, cur) => Number(pre) + Number(cur)),
+    );
+
+    return aSort === bSort ? a - b : aSort - bSort;
   });
 }
 
@@ -44,5 +55,5 @@ Your task is to write the function sortBybit() that takes an array of integers a
 Note: Your function should modify the input rather than creating a new array.
 
 sortByBit([3, 8, 3, 6, 5, 7, 9, 1]) // => [1, 8, 3, 3, 5, 6, 9, 7]
-FUNDAMENTALSARRAYSALGORITHMSDATA STRUCTURES
+
 */

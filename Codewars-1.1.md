@@ -14,7 +14,7 @@
 - 6 \*62\* kyu https://www.codewars.com/kata/reverse-or-rotate
 - 6 \*63\* kyu https://www.codewars.com/kata/multiples-of-3-or-5
 
-- 6 \*\* kyu https://www.codewars.com/kata/duplicate-encoder
+- 6 \*10\* kyu https://www.codewars.com/kata/duplicate-encoder
 - 6 \*\* kyu https://www.codewars.com/kata/n-th-fibonacci
 
 # Arrays

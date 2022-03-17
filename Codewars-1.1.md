@@ -15,7 +15,7 @@
 - 6 \*63\* kyu https://www.codewars.com/kata/multiples-of-3-or-5
 
 - 6 \*10\* kyu https://www.codewars.com/kata/duplicate-encoder
-- 6 \*\* kyu https://www.codewars.com/kata/n-th-fibonacci
+- 6 \*68\* kyu https://www.codewars.com/kata/n-th-fibonacci
 
 # Arrays
 
@@ -24,9 +24,8 @@
 - 6 \*66\* kyu https://www.codewars.com/kata/valid-string
 - 6 \*67\* kyu https://www.codewars.com/kata/sorting-by-bits
 
-- 6 \*\* kyu https://www.codewars.com/kata/length-of-missing-array
+- 6 \*69\* kyu https://www.codewars.com/kata/length-of-missing-array
 - 6 \*\* kyu https://www.codewars.com/kata/pair-of-gloves
-- 6 \*\* kyu https://www.codewars.com/kata/sorting-by-bits
 
 # Functions
 

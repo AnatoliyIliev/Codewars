@@ -25,7 +25,7 @@
 - 6 \*67\* kyu https://www.codewars.com/kata/sorting-by-bits
 
 - 6 \*69\* kyu https://www.codewars.com/kata/length-of-missing-array
-- 6 \*\* kyu https://www.codewars.com/kata/pair-of-gloves
+- 6 \*70\* kyu https://www.codewars.com/kata/pair-of-gloves
 
 # Functions
 

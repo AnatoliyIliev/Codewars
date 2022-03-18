@@ -29,7 +29,7 @@
 
 # Functions
 
-- 7 \*\* https://www.codewars.com/kata/javascript-mathematician
+- 7 \*71\* https://www.codewars.com/kata/javascript-mathematician
 - 6 \*\* https://www.codewars.com/kata/nuclear-missile-manager
 - 6 \*\* kyu https://www.codewars.com/kata/closures-and-scopes
 - 6 \*\* kyu https://www.codewars.com/kata/can-you-keep-a-secret

@@ -37,8 +37,8 @@
 # Date
 
 - 7 \*75\* kyu https://www.codewars.com/kata/the-coupon-code
-- 7 \*\* kyu https://www.codewars.com/kata/unlucky-days
-- 4 \*\* kyu https://www.codewars.com/kata/human-readable-duration-format
+- 7 \*76\* kyu https://www.codewars.com/kata/unlucky-days
+- 4 \*77\* kyu https://www.codewars.com/kata/human-readable-duration-format
 
 # Objects
 

@@ -3,7 +3,7 @@ function launchAll(launchMissile) {
   for (let i = 0; i < 5; i++) {
     setTimeout(function () {
       launchMissile(i);
-    }, 1000);
+    }, i * 1000);
   }
 }
 
@@ -17,7 +17,7 @@ function launchAll(launchMissile) {
 // function delay(a) {
 //   setTimeout(function () {
 //     launchMissile(a);
-//   }, 1000);
+//   }, a * 1000);
 // }
 
 function launchMissile(r) {

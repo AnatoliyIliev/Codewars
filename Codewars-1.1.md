@@ -38,14 +38,15 @@
 
 - 7 \*75\* kyu https://www.codewars.com/kata/the-coupon-code
 - 7 \*76\* kyu https://www.codewars.com/kata/unlucky-days
+
 - 4 \*77\* kyu https://www.codewars.com/kata/human-readable-duration-format
 
 # Objects
 
 - 7 \*36\* kyu https://www.codewars.com/kata/mylanguages
 - 6 \*78\* kyu https://www.codewars.com/kata/run-length-encoding
-- 6 \*\* kyu https://www.codewars.com/kata/lets-recycle
-- 6 \*\* kyu https://www.codewars.com/kata/urban-dictionary
+- 6 \*79\* kyu https://www.codewars.com/kata/lets-recycle
+- 6 \*80\* kyu https://www.codewars.com/kata/urban-dictionary
 
 # NO
 

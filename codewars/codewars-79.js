@@ -17,6 +17,7 @@ function recycle(array) {
 
 let a = [
   { type: 'rotten apples', material: 'organic' },
+
   {
     type: 'out of date yogurt',
     material: 'organic',

@@ -1,3 +1,5 @@
+console.log('Hello')
+
 function foo() {
   console.log(this);
 }

@@ -6,6 +6,7 @@ function foo() {
 foo.call(null);
 
 const a = 4534;
+const b = 23423;
 //=window
 
 //-----//

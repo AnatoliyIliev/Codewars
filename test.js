@@ -5,6 +5,7 @@ function foo() {
 }
 foo.call(null);
 
+const a = 4534;
 //=window
 
 //-----//

@@ -4,7 +4,7 @@
 - \*\*82 7 kyu https://www.codewars.com/kata/javascript-class-like-objects
 - \*\*83 7 kyu https://www.codewars.com/kata/the-newest-function
 - \*\*84 7 kyu https://www.codewars.com/kata/array-mappings
-- 7
+- \*\*85 7
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-2-animals-and-inheritance
 - 7
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-4-cubes-and-setters

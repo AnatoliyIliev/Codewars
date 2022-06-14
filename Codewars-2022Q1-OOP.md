@@ -3,7 +3,7 @@
 - \*\*81 7 kyu https://www.codewars.com/kata/santaclausable-interface
 - \*\*82 7 kyu https://www.codewars.com/kata/javascript-class-like-objects
 - \*\*83 7 kyu https://www.codewars.com/kata/the-newest-function
-- 7 kyu https://www.codewars.com/kata/array-mappings
+- \*\*84 7 kyu https://www.codewars.com/kata/array-mappings
 - 7
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-2-animals-and-inheritance
 - 7

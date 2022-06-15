@@ -1,5 +1,6 @@
 function isSantaClausable(obj) {
   const santa = ['sayHoHoHo', 'distributeGifts', 'goDownTheChimney'];
+
   const result = santa.filter(item => {
     if (typeof obj[item] !== 'function') return false;
     else {

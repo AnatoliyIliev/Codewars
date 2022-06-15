@@ -6,7 +6,7 @@
 - \*\*84 7 kyu https://www.codewars.com/kata/array-mappings
 - \*\*85 7
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-2-animals-and-inheritance
-- 7
+- \*\*86 7
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-4-cubes-and-setters
 - 6
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-6-fake-files-basic

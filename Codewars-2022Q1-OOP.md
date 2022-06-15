@@ -8,7 +8,7 @@
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-2-animals-and-inheritance
 - \*\*86 7
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-4-cubes-and-setters
-- 6
+- \*\*87 6
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-6-fake-files-basic
 - 6 kyu
   https://www.codewars.com/kata/defining-getters-and-setters-on-an-existing-class

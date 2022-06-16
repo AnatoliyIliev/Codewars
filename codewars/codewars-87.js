@@ -2,6 +2,8 @@ class File {
   constructor(fullName, contents) {
     this._fullName = fullName;
     this.contents = contents;
+    this.countWorld = 0;
+    this.countLetter = 0;
   }
 
   get fullName() {
@@ -14,7 +16,6 @@ class File {
 
   get filename() {
     return this._fullName.replace(/\.\w*$/, '');
-    // return this.fullName.replace(/\.[^.]*$/, '');
   }
 
   set filename(newFile) {
@@ -22,7 +23,7 @@ class File {
   }
 
   get extension() {
-    return this._fullName.match(/\.\w*$/)[0];
+    return this._fullName.match(/\w*$/)[0];
   }
 
   set extension(newExtension) {
@@ -34,65 +35,39 @@ class File {
   }
 
   write(newContents) {
-    this.contents = `${this.contents}\\n${newContents}`;
+    this.contents = `${this.contents}\n${newContents}`;
   }
 
   gets() {
     if (this.contents) {
-      const getsContent = this.contents.split('\\n');
+      const getsContent = this.contents.split('\n')[this.countWorld];
+      this.countWorld += 1;
       return getsContent;
     }
-    // else {
-    //   return undefined;
-    // }
+  }
+
+  getc() {
+    if (this.contents) {
+      const getsContent = this.contents.split('')[this.countLetter];
+      this.countLetter += 1;
+      return getsContent;
+    }
   }
 }
+var myFile = new File('hello.txt', 'Hello World');
+console.log(myFile.fullName); // hello.txt
+myFile.fullName = 'goodbye.txt'; // Reassignment should fail
+console.log(myFile.fullName); // still "hello.txt"
 
-var example = new File('example.txt', 'An example file');
-console.log(example.fullName); //, 'example.txt');
-console.log(example.filename); //, 'example');
-console.log(example.extension); //, 'txt');
-example.fullName = 'modified.txt';
-//Test.assertNotEquals(example.fullName, 'modified.txt');
-console.log(example.fullName); //, 'example.txt');
-example.filename = 'hacked';
-//Test.assertNotEquals(example.filename, 'hacked');
-console.log(example.filename); //, 'example');
-example.extension = 'locky';
-//Test.assertNotEquals(example.extension, 'locky');
-console.log(example.extension); //, 'txt');
-console.log(example.getContents()); //, 'An example file');
-example.write('Hello World');
-console.log(example.getContents()); //, 'An example file\nHello World');
-example.write('This is an example file provided to you by the Kata author');
-console.log(example.getContents()); // ,      'An example file\nHello World\nThis is an example file provided to you by the Kata author',
-
-example.write('This example file is used as an example test case.');
-console.log(example.getContents()); // 'An example file\nHello World\nThis is an example file provided to you by the Kata author\nThis example file is used as an example test case.',
-
-console.log(example.gets()); //, 'An example file');
-console.log(example.gets()); //, 'Hello World');
-console.log(example.gets()); //,      'This is an example file provided to you by the Kata author',
-console.log(example.gets()); //,      'This example file is used as an example test case.',
-console.log(example.gets()); //, undefined);
-console.log(example.gets()); //, undefined);
-console.log(example.gets()); //, undefined);
-console.log(example.getc()); //, 'A');
-console.log(example.getc()); //, 'n');
-console.log(example.getc()); //, ' ');
-console.log(example.getc()); //, 'e');
-console.log(example.getc()); //, 'x');
-console.log(example.getc()); //, 'a');
-console.log(example.getc()); //, 'm');
-console.log(example.getc()); //, 'p');
-console.log(example.getc()); //, 'l');
-console.log(example.getc()); //, 'e');
-for (let i = 0; i < 1000; i++) {
-  example.getc();
-}
-console.log(example.getc()); //, undefined);
-console.log(example.getc()); //, undefined);
-console.log(example.getc()); //, undefined);
+var myFile = new File('example.txt', 'Line 1\nLine 2\nLine 3\nLine 4\nLine 5');
+console.log(myFile.gets()); // "Line 1"
+console.log(myFile.gets()); // "Line 2"
+console.log(myFile.gets()); // "Line 3"
+console.log(myFile.gets()); // "Line 4"
+console.log(myFile.gets()); // "Line 5"
+console.log(myFile.gets()); // undefined
+console.log(myFile.gets()); // undefined
+console.log(myFile.gets()); // undefined
 
 // Fun with ES6 Classes #6 - Fake Files (Basic)
 // Kata and Series Overview

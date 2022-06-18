@@ -12,7 +12,7 @@
   kyu https://www.codewars.com/kata/fun-with-es6-classes-number-6-fake-files-basic
 - \*\*88 6 kyu
   https://www.codewars.com/kata/defining-getters-and-setters-on-an-existing-class
-- 6 kyu https://www.codewars.com/kata/array-helpers
+- \*\*89 6 kyu https://www.codewars.com/kata/array-helpers
 - 6 kyu https://www.codewars.com/kata/array-number-reduce
 - 6 kyu https://www.codewars.com/kata/extract-nested-object-reference
 - 6 kyu https://www.codewars.com/kata/image-host-filename-generator

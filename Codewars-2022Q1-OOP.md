@@ -13,7 +13,7 @@
 - \*\*88 6 kyu
   https://www.codewars.com/kata/defining-getters-and-setters-on-an-existing-class
 - \*\*89 6 kyu https://www.codewars.com/kata/array-helpers
-- 6 kyu https://www.codewars.com/kata/array-number-reduce
+- \*\*90 6 kyu https://www.codewars.com/kata/array-number-reduce
 - 6 kyu https://www.codewars.com/kata/extract-nested-object-reference
 - 6 kyu https://www.codewars.com/kata/image-host-filename-generator
 - 5 kyu https://www.codewars.com/kata/using-closures-to-share-class-state

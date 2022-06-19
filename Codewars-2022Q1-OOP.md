@@ -15,7 +15,7 @@
 - \*\*89 6 kyu https://www.codewars.com/kata/array-helpers
 - \*\*90 6 kyu https://www.codewars.com/kata/array-number-reduce
 - \*\*91 6 kyu https://www.codewars.com/kata/extract-nested-object-reference
-- 6 kyu https://www.codewars.com/kata/image-host-filename-generator
+- \*\*92 6 kyu https://www.codewars.com/kata/image-host-filename-generator
 - 5 kyu https://www.codewars.com/kata/using-closures-to-share-class-state
 - 5 kyu https://www.codewars.com/kata/replicate-new
 - 5 kyu https://www.codewars.com/kata/simple-events

@@ -13,7 +13,7 @@
 - \*\*91 6 kyu https://www.codewars.com/kata/extract-nested-object-reference
 - \*\*92 6 kyu https://www.codewars.com/kata/image-host-filename-generator
 - \*\*93 5 kyu https://www.codewars.com/kata/using-closures-to-share-class-state
-- 5 kyu https://www.codewars.com/kata/replicate-new
+- \*\*94 5 kyu https://www.codewars.com/kata/replicate-new
 - 5 kyu https://www.codewars.com/kata/simple-events
 - 4 kyu https://www.codewars.com/kata/undo-slash-redo
 

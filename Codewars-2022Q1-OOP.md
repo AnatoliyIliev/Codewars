@@ -15,7 +15,7 @@
 - \*\*93 5 kyu https://www.codewars.com/kata/using-closures-to-share-class-state
 - \*\*94 5 kyu https://www.codewars.com/kata/replicate-new
 - \*\*95 5 kyu https://www.codewars.com/kata/simple-events
-- 4 kyu https://www.codewars.com/kata/undo-slash-redo
+- \*\*96 4 kyu https://www.codewars.com/kata/undo-slash-redo
 
 ## Как сабмитить задание
 

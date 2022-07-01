@@ -1,9 +1,10 @@
 function undoRedo(object) {
   let stack = [];
   let undoStack = [];
-  let state = [];
+  let allState = [];
   //   let redoStack = [];
-  let currentPosition = 0;
+  // let currentPosition = 0;
+  let currentState = null;
 
   let undoCount = 0;
   // let redoCount = 0;
@@ -14,28 +15,31 @@ function undoRedo(object) {
       stack.push({ ...object });
       object[key] = value;
 
-      state.push('set');
-      // currentPosition += 1;
+      allState.push(currentState);
+      currentState = 'set';
       undoCount += 1;
+
       console.log(object);
       console.log(stack);
-      console.log(state);
+      console.log(allState);
+      console.log('currentState = ', currentState);
     },
     //get(key)Возвращает значение, связанное с ключом.
     get: function (key) {
-      console.log(object);
-      console.log(stack);
-      console.log(state);
       return object[key];
     },
     //del(key)удаляет ключ из объекта.
     del: function (key) {
       stack.push({ ...object });
       delete object[key];
-      state.push('del');
-
-      // currentPosition += 1;
+      allState.push(currentState);
+      currentState = 'del';
       undoCount += 1;
+
+      console.log(object);
+      console.log(stack);
+      console.log(allState);
+      console.log('currentState =  ', currentState);
     },
     //undo() Отменить последнюю операцию (set или del) над объектом.
     //Выдает исключение, если нет операции для отмены.
@@ -94,38 +98,38 @@ var unRe = undoRedo(obj);
 // console.log(unRe.get('x')); //, undefined, 'The x key should not exist');
 
 //undo
-console.log(unRe.get('x')); //, 1, 'The get method returns the value of a key');
-unRe.set('x', 3);
-console.log(unRe.get('x')); //, 3, 'The set method change the value of a key');
+// console.log(unRe.get('x')); //, 1, 'The get method returns the value of a key');
+// unRe.set('x', 3);
+// console.log(unRe.get('x')); //, 3, 'The set method change the value of a key');
 
-unRe.set('y', 10);
-console.log(unRe.get('y')); //, 10, 'The get method returns the value of a key');
-unRe.del('x');
-console.log(unRe.get('x')); //, undefined, 'The x key should not exist');
-unRe.undo();
-console.log(unRe.get('y')); //, 2, 'The undo method restores the previous state');
+// unRe.set('y', 10);
+// console.log(unRe.get('y')); //, 10, 'The get method returns the value of a key');
+// unRe.del('x');
+// console.log(unRe.get('x')); //, undefined, 'The x key should not exist');
+// unRe.undo();
+// console.log(unRe.get('y')); //, 2, 'The undo method restores the previous state');
 
 //3
-// unRe.set('y', 10);
-// unRe.set('y', 100);
-// unRe.set('x', 150);
-// unRe.set('x', 50);
-// console.log(unRe.get('y')); //, 100, 'The get method returns the value of a key');
-// console.log(unRe.get('x')); //, 50, 'The get method returns the value of a key');
-// unRe.undo();
-// console.log(unRe.get('x')); //, 150, 'The undo method restores the previous state');
-// console.log(unRe.get('y')); //, 100, 'The y key stays the same');
-// unRe.redo();
-// console.log(unRe.get('x')); //, 50, 'Undo the x value');
-// console.log(unRe.get('y')); //, 100, 'The y key stays the same');
-// unRe.undo();
-// unRe.undo();
-// console.log(unRe.get('x')); //, 1, 'Undo the x value');
-// console.log(unRe.get('y')); //, 100, 'The y key stays the same');
-// unRe.undo();
-// unRe.undo();
-// console.log(unRe.get('y')); //, 2, 'Undo the y value');
-// console.log(unRe.get('x')); //, 1, 'The x key stays the same');
+unRe.set('y', 10);
+unRe.set('y', 100);
+unRe.set('x', 150);
+unRe.set('x', 50);
+console.log(unRe.get('y')); //, 100, 'The get method returns the value of a key');
+console.log(unRe.get('x')); //, 50, 'The get method returns the value of a key');
+unRe.undo();
+console.log(unRe.get('x')); //, 150, 'The undo method restores the previous state');
+console.log(unRe.get('y')); //, 100, 'The y key stays the same');
+unRe.redo();
+console.log(unRe.get('x')); //, 50, 'Undo the x value');
+console.log(unRe.get('y')); //, 100, 'The y key stays the same');
+unRe.undo();
+unRe.undo();
+console.log(unRe.get('x')); //, 1, 'Undo the x value');
+console.log(unRe.get('y')); //, 100, 'The y key stays the same');
+unRe.undo();
+unRe.undo();
+console.log(unRe.get('y')); //, 2, 'Undo the y value');
+console.log(unRe.get('x')); //, 1, 'The x key stays the same');
 
 /*
 The purpose of this kata is to implement the undoRedo function.

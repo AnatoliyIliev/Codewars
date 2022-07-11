@@ -1,13 +1,18 @@
 function undoRedo(object) {
-  let stack = [];
-  let undoStack = [];
-  let allState = [];
-  //   let redoStack = [];
-  // let currentPosition = 0;
-  let currentState = null;
+  const stack = []; // [{x: 1, y: 2}, {x: 1, y: 10}, {x: 1, y: 100}]
+  const allState = []; // ['set', 'set', 'set', 'set']
+  let redoStack = [];
 
-  let undoCount = 0;
-  // let redoCount = 0;
+  const delKeys = obj => {
+    for (let key in obj) {
+      delete object[key];
+    }
+
+    for (let key in object) {
+      delete object[key];
+      object[key] = obj[key];
+    }
+  };
 
   return {
     //set(key, value)Присваивает значение ключу. Если ключ не существует, создает его.
@@ -15,14 +20,11 @@ function undoRedo(object) {
       stack.push({ ...object });
       object[key] = value;
 
-      allState.push(currentState);
-      currentState = 'set';
-      undoCount += 1;
+      redoStack = [];
 
-      console.log(object);
-      console.log(stack);
-      console.log(allState);
-      console.log('currentState = ', currentState);
+      console.log('set', object);
+      // console.log('stack', stack);
+      // console.log('allState', allState);
     },
     //get(key)Возвращает значение, связанное с ключом.
     get: function (key) {
@@ -32,82 +34,51 @@ function undoRedo(object) {
     del: function (key) {
       stack.push({ ...object });
       delete object[key];
-      allState.push(currentState);
-      currentState = 'del';
-      undoCount += 1;
 
-      console.log(object);
+      redoStack = [];
+
+      console.log('del', object);
       console.log(stack);
       console.log(allState);
-      console.log('currentState =  ', currentState);
     },
     //undo() Отменить последнюю операцию (set или del) над объектом.
     //Выдает исключение, если нет операции для отмены.
     undo: function () {
-      if (undoCount === 0) {
+      if (!stack) {
         throw new Error('Error, no to undo');
       } else {
-        // stack.pop();
-        // object = stack[currentPosition - 1];
-        // currentPosition -= 1;
-        // undoCount -= 1;
-        // redoCount += 1;
+        redoStack.push({ ...object });
+        object = stack.pop();
+
+        console.log('undo', object);
       }
     },
     //redo() Отменить последнюю операцию отмены (Отменить можно только после отмены).
     //Выдает исключение, если нет операции для повторения.
     redo: function () {
-      if (1) {
+      if (!redoStack) {
         throw new Error('Error, no to redo');
       } else {
-        // stack.pop();
-        // object = stack[currentPosition - 1];
-        // currentPosition -= 1;
-        // redoCount -= 1;
+        stack.push({ ...object });
+        object = redoStack.pop();
+
+        console.log('redo', object);
       }
     },
   };
 }
+// Любой set/del после undo должен запретить новый повтор.
 
 var obj = {
   x: 1,
   y: 2,
 };
 
-// var obj = {
-//   x: 1,
-// };
-
 var unRe = undoRedo(obj);
-
-//MOE
-// unRe.set('x', 5);
-// console.log(unRe.get('x')); //, 5
-// unRe.set('y', 6);
-// console.log(unRe.get('y')); //, 6
-// unRe.undo();
-// console.log(unRe.get('x')); //, 5
-// console.log(unRe.get('y')); //, undefined
-
-// del / undo / redo;
-// unRe.del('x');
-// console.log(unRe.get('x')); //, undefined, 'The x key should not exist');
-// unRe.undo();
-// console.log(unRe.get('x')); //, 1, 'A new key has been added');
-// unRe.redo();
-// console.log(unRe.get('x')); //, undefined, 'The x key should not exist');
-
-//undo
-// console.log(unRe.get('x')); //, 1, 'The get method returns the value of a key');
-// unRe.set('x', 3);
-// console.log(unRe.get('x')); //, 3, 'The set method change the value of a key');
-
 // unRe.set('y', 10);
 // console.log(unRe.get('y')); //, 10, 'The get method returns the value of a key');
-// unRe.del('x');
-// console.log(unRe.get('x')); //, undefined, 'The x key should not exist');
 // unRe.undo();
-// console.log(unRe.get('y')); //, 2, 'The undo method restores the previous state');
+// console.log(unRe.get('y')); //, 2,
 
 //3
 unRe.set('y', 10);
@@ -418,6 +389,127 @@ redo()Повторить последнюю операцию отмены (по�
 //         undoStack.push({ ...object });
 //         object = redoStack.pop();
 //         return object;
+//       }
+//     },
+//   };
+// }
+
+// function undoRedo(object) {
+//   function History(type, key, oldValue, newValue) {
+//     this.type = type;
+//     this.key = key;
+//     this.oldValue = oldValue;
+//     this.newValue = newValue;
+//   }
+//   function UndoLimitException() {
+//     this.name = 'UndoLimitException';
+//     this.message = 'cannot undo';
+//   }
+//   function RedoLimitException() {
+//     this.name = 'RedoLimitException';
+//     this.message = 'cannot redo';
+//   }
+
+//   var history = [];
+//   var index = 0;
+//   return {
+//     set: function (key, value) {
+//       if (object.hasOwnProperty(key)) history.push(new History('set', key, object[key], value));
+//       else history.push(new History('new', key, null, value));
+//       object[key] = value;
+//       index++;
+//       history.length = index;
+//     },
+//     get: function (key) {
+//       return object[key];
+//     },
+//     del: function (key) {
+//       history.push(new History('del', key, object[key], null));
+//       delete object[key];
+//       index++;
+//       history.length = index;
+//     },
+//     undo: function () {
+//       if (index <= 0) throw new UndoLimitException();
+//       index--;
+
+//       var h = history[index];
+//       if (h.type == 'set') object[h.key] = h.oldValue;
+//       else if (h.type == 'new') delete object[h.key];
+//       else if (h.type == 'del') object[h.key] = h.oldValue;
+//     },
+//     redo: function () {
+//       if (index >= history.length) throw new RedoLimitException();
+
+//       var h = history[index];
+//       if (h.type == 'set') object[h.key] = h.newValue;
+//       else if (h.type == 'new') object[h.key] = h.newValue;
+//       else if (h.type == 'del') delete object[h.key];
+
+//       index++;
+//     },
+//   };
+// }
+
+// function undoRedo(object) {
+//   const undoArchive = [];
+//   let redoArchive = [];
+//   let undoCount = 0;
+
+//   return {
+//     ...object,
+//     set: function (key, value) {
+//       undoArchive.push({ ...object });
+
+//       object[key] = value;
+
+//       undoCount = 0;
+//       redoArchive = [];
+//     },
+//     get: function (key) {
+//       return object[key];
+//     },
+//     del: function (key) {
+//       undoArchive.push({ ...object });
+
+//       delete object[key];
+//       undoCount = 0;
+//       redoArchive = [];
+//     },
+//     undo: function () {
+//       if (!undoArchive.length) {
+//         throw new Error('nothing to undo');
+//       } else {
+//         let lastObj = undoArchive.pop();
+//         redoArchive.push({ ...object });
+
+//         for (let prop in object) {
+//           delete object[prop];
+//         }
+
+//         for (let prop in lastObj) {
+//           delete object[prop];
+//           object[prop] = lastObj[prop];
+//         }
+//         undoCount++;
+//       }
+//     },
+//     redo: function () {
+//       if (undoCount <= 0) {
+//         throw new Error('nothing to redo');
+//       } else {
+//         undoArchive.push({ ...object });
+//         let lastObj = redoArchive.pop();
+
+//         for (let prop in object) {
+//           delete object[prop];
+//         }
+
+//         for (let prop in lastObj) {
+//           delete object[prop];
+//           object[prop] = lastObj[prop];
+//         }
+//         undoCount--;
 //       }
 //     },
 //   };

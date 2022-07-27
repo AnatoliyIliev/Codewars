@@ -2,10 +2,9 @@
 
 - 97 - 7 kyu https://www.codewars.com/kata/first-class-function-factory
 - 98 - 7 kyu https://www.codewars.com/kata/the-wheat-slash-rice-and-chessboard-problem
-
-- 6 kyu https://www.codewars.com/kata/function-composition
-- 6 kyu https://www.codewars.com/kata/function-composition-1
-- 6 kyu https://www.codewars.com/kata/reusable-memoisation
+- 99 - 6 kyu https://www.codewars.com/kata/function-composition
+- 100 - 6 kyu https://www.codewars.com/kata/function-composition-1
+- 101 - 6 kyu https://www.codewars.com/kata/reusable-memoisation
 - 6 kyu https://www.codewars.com/kata/mutual-recursion
 - 6 kyu https://www.codewars.com/kata/once
 - 6 kyu https://www.codewars.com/kata/multifilter

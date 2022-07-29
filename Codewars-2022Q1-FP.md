@@ -7,7 +7,7 @@
 - 101 - 6 kyu https://www.codewars.com/kata/reusable-memoisation
 - 102 - 6 kyu https://www.codewars.com/kata/mutual-recursion
 - 103 - 6 kyu https://www.codewars.com/kata/once
-- 6 kyu https://www.codewars.com/kata/multifilter
+- 104 - 6 kyu https://www.codewars.com/kata/multifilter
 - 6 kyu https://www.codewars.com/kata/combinator-flip
 - 5 kyu https://www.codewars.com/kata/function-cache
 - 5 kyu https://www.codewars.com/kata/a-chain-adding-function

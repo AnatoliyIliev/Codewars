@@ -2,7 +2,6 @@ function makeLooper(str) {
   let count = 0;
   return () => {
     const result = str[count];
-    // console.log(str.length, count);
     count = str.length - 1 == count ? 0 : (count += 1);
     return result;
   };

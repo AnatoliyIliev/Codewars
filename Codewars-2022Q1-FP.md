@@ -11,8 +11,8 @@
 - 105 - 6 kyu https://www.codewars.com/kata/combinator-flip
 - 106 - 5 kyu https://www.codewars.com/kata/function-cache
 - 107 - 5 kyu https://www.codewars.com/kata/a-chain-adding-function
-- 5 kyu https://www.codewars.com/kata/lazy-repeater
-- 4 kyu https://www.codewars.com/kata/currying-vs-partial-application
+- 108 - 5 kyu https://www.codewars.com/kata/lazy-repeater
+- 109 - 4 kyu https://www.codewars.com/kata/currying-vs-partial-application
 
 ## Как сабмитить задание
 

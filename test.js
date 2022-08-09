@@ -1,19 +1,19 @@
-function partialUsingArguments(fn, ...args1) {
-  console.log(...args1, args1);
-  return function newFunc(...args2) {
-    console.log(...args2, args2);
-    return fn(...args1.concat(...args2));
-  };
-}
+// function partialUsingArguments(fn, ...args1) {
+//   console.log(...args1, args1);
+//   return function newFunc(...args2) {
+//     console.log(...args2, args2);
+//     return fn(...args1.concat(...args2));
+//   };
+// }
 
-const fn = function (x1, x2, x3, x4) {
-  return x1 + x2 + x3 + x4;
-};
+// const fn = function (x1, x2, x3, x4) {
+//   return x1 + x2 + x3 + x4;
+// };
 
-console.log(partialUsingArguments(fn, 'a')('b', 'c', 'd')); // => 'abcd'
-console.log(partialUsingArguments(fn, 'a', 'b')('c', 'd')); // => 'abcd'
-console.log(partialUsingArguments(fn, 'a', 'b', 'c')('d')); // => 'abcd'
-console.log(partialUsingArguments(fn, 'a', 'b', 'c', 'd')()); //) => 'abcd'
+// console.log(partialUsingArguments(fn, 'a')('b', 'c', 'd')); // => 'abcd'
+// console.log(partialUsingArguments(fn, 'a', 'b')('c', 'd')); // => 'abcd'
+// console.log(partialUsingArguments(fn, 'a', 'b', 'c')('d')); // => 'abcd'
+// console.log(partialUsingArguments(fn, 'a', 'b', 'c', 'd')()); //) => 'abcd'
 
 // function timeSpanToString(startDate, endDate) {
 //   const d2 = new Date(startDate).getDate();

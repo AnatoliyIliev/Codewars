@@ -3,7 +3,7 @@ Codewars-2022Q1-DP.md
 # Design patterns
 
 - 110 - 7 kyu https://www.codewars.com/kata/singleton-pattern
-- 7 kyu https://www.codewars.com/kata/patterncraft-adapter
+- 111 - 7 kyu https://www.codewars.com/kata/patterncraft-adapter
 - 7 kyu https://www.codewars.com/kata/patterncraft-visitor
 - 6 kyu https://www.codewars.com/kata/patterncraft-state
 - 6 kyu https://www.codewars.com/kata/patterncraft-strategy

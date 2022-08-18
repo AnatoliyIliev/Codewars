@@ -6,7 +6,7 @@ Codewars-2022Q1-DP.md
 - 111 - 7 kyu https://www.codewars.com/kata/patterncraft-adapter
 - 112 - 7 kyu https://www.codewars.com/kata/patterncraft-visitor
 - 113 - 6 kyu https://www.codewars.com/kata/patterncraft-state
-- 6 kyu https://www.codewars.com/kata/patterncraft-strategy
+- 114 - 6 kyu https://www.codewars.com/kata/patterncraft-strategy
 - 6 kyu https://www.codewars.com/kata/patterncraft-decorator
 - 6 kyu https://www.codewars.com/kata/create-iterator
 - 6 kyu https://www.codewars.com/kata/sortable-shapes

@@ -8,7 +8,7 @@ Codewars-2022Q1-DP.md
 - 113 - 6 kyu https://www.codewars.com/kata/patterncraft-state
 - 114 - 6 kyu https://www.codewars.com/kata/patterncraft-strategy
 - 115 - 6 kyu https://www.codewars.com/kata/patterncraft-decorator
-- 6 kyu https://www.codewars.com/kata/create-iterator
+- 116 - 6 kyu https://www.codewars.com/kata/create-iterator
 - 6 kyu https://www.codewars.com/kata/sortable-shapes
 - 4 kyu https://www.codewars.com/kata/dependency-injection
 

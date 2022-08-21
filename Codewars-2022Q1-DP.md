@@ -9,7 +9,7 @@ Codewars-2022Q1-DP.md
 - 114 - 6 kyu https://www.codewars.com/kata/patterncraft-strategy
 - 115 - 6 kyu https://www.codewars.com/kata/patterncraft-decorator
 - 116 - 6 kyu https://www.codewars.com/kata/create-iterator
-- 6 kyu https://www.codewars.com/kata/sortable-shapes
+- 117 - 6 kyu https://www.codewars.com/kata/sortable-shapes
 - 4 kyu https://www.codewars.com/kata/dependency-injection
 
 ## Как сабмитить задание

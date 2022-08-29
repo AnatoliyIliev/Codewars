@@ -1,4 +1,7 @@
-const curryPartial = (fn, ...args) => (args.length >= fn.length ? fn(...args) : (...params) => curryPartial(fn, ...args, ...params));
+const curryPartial = (fn, ...args) =>
+  args.length >= fn.length
+    ? fn(...args)
+    : (...params) => curryPartial(fn, ...args, ...params);
 
 //  'Function with three random parameters'
 function add(a, b, c) {

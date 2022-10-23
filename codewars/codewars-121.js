@@ -34,8 +34,7 @@ console.log(decode('')); //, '');
 console.log(decode(data2Sol)); //, data2);
 
 /*
-5 kyu
-Coding with Squared Strings
+5 kyu  Coding with Squared Strings
 
 A squared string has n lines, each substring being n characters long: For example:
 

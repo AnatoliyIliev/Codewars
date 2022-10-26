@@ -1,33 +1,39 @@
-class SortedArray {
-  constructor(dir, init) {
-    this.dir = dir === 'asc' || dir === 'desc' ? dir : undefined;
-    // this.dir = dir;
-    this.init = init;
-    this.array = [];
+class SortedArray extends Array {
+  constructor(dir) {
+    super();
+    dir = dir === 'asc' || dir === 'desc' ? dir : undefined;
+    if (!dir) throw new Error('Wrong direction enum');
+    Object.defineProperty(this, 'dir', { value: dir });
   }
 
   insert(...values) {
-    this.array = this.array.concat(values);
+    this.push(...values);
 
-    const result = this.array.sort((a, b) => {
+    this.sort((a, b) => {
       if (this.dir === 'asc') {
         return a - b;
       } else if (this.dir === 'desc') {
         return b - a;
       }
     });
-    console.log(result);
-    return result;
-  }
-
-  pop() {
-    return this.array.pop();
-  }
-
-  shift() {
-    return this.array.shift();
+    return this.length;
   }
 }
+
+// class SortedArray extends Array {
+//   constructor(_dir) {
+//     super();
+//     const dir = { asc: 1, desc: -1 }[_dir];
+//     if (!dir) throw new Error('Wrong direction enum');
+//     Object.defineProperty(this, 'dir', { value: dir });
+//   }
+
+//   insert(...values) {
+//     this.push(...values);
+//     this.sort((a, b) => (a - b) * this.dir);
+//     return this.length;
+//   }
+// }
 
 const ascendingArray = new SortedArray('asc');
 console.log(ascendingArray); //, []);

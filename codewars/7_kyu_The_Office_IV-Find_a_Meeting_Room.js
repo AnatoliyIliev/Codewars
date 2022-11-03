@@ -1,8 +1,10 @@
-function meeting(x) {}
+function meeting(x) {
+  return x.indexOf('O') !== -1 ? x.indexOf('O') : 'None available!';
+}
 
-assert.strictEqual(meeting(['X', 'O', 'X']), 1);
-assert.strictEqual(meeting(['O', 'X', 'X', 'X', 'X']), 0);
-assert.strictEqual(meeting(['X', 'X', 'X', 'X', 'X']), 'None available!');
+console.log(meeting(['X', 'O', 'X'])); //, 1);
+console.log(meeting(['O', 'X', 'O', 'X', 'X'])); //, 0);
+console.log(meeting(['X', 'X', 'X', 'X', 'X'])); //, 'None available!');
 
 /*
 7 kyu

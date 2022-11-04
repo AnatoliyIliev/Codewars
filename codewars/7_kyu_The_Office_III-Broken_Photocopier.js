@@ -1,5 +1,7 @@
 function broken(x) {
-  //'None available!';
+  return x
+    .split('')
+    .reduce((result, item) => (result += Number(item) === 1 ? 0 : 1), '');
 }
 
 console.log(broken('1')); //, '0');

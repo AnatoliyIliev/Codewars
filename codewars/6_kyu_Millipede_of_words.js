@@ -1,17 +1,11 @@
 function solution(words) {
-  let nextWord = 1;
-
-  for (let i = 0; i < words.length; i += 1) {
+  for (let i = 0; i < words.length - 1; i += 1) {
     const lastIndexLetter = words[i].length - 1;
-    nextWord = 1;
 
-    for (let j = 1; j < words.length; j += 1) {
-      console.log(words[i][lastIndexLetter], '===', words[nextWord][0]);
+    console.log(words[i][lastIndexLetter], '===', words[i + 1][0]);
 
-      if (i !== nextWord && words[i][lastIndexLetter] === words[nextWord][0]) {
-        return true;
-      }
-      nextWord += 1;
+    if (words[i][lastIndexLetter] === words[i + 1][0]) {
+      return true;
     }
   }
   return false;
@@ -29,22 +23,22 @@ console.log(
   ]),
 ); // true
 
-console.log(
-  solution([
-    'trade',
-    'pole',
-    'view',
-    'grave',
-    'ladder',
-    'mushroom',
-    'president',
-  ]),
-); //  false,
+// console.log(
+//   solution([
+//     'trade',
+//     'pole',
+//     'view',
+//     'grave',
+//     'ladder',
+//     'mushroom',
+//     'president',
+//   ]),
+// ); //  false,
 
-console.log(solution(['screen', 'desire', 'theater', 'excess', 'night'])); // true,
-console.log(solution(['engine', 'endure', 'elite', 'excess'])); //, true);
-console.log(solution(['east', 'e', 'e', 't', 't', 'e', 'time'])); //,      true,
-console.log(solution(['no', 'dog', 'on', 'good'])); //, false);
+// console.log(solution(['screen', 'desire', 'theater', 'excess', 'night'])); // true,
+// console.log(solution(['engine', 'endure', 'elite', 'excess'])); //, true);
+// console.log(solution(['east', 'e', 'e', 't', 't', 'e', 'time'])); //,      true,
+// console.log(solution(['no', 'dog', 'on', 'good'])); //, false);
 
 /*
 6 kyu

@@ -1,14 +1,30 @@
 function solution(words) {
-  for (let i = 0; i < words.length - 1; i += 1) {
-    const lastIndexLetter = words[i].length - 1;
+  const result = [];
 
-    console.log(words[i][lastIndexLetter], '===', words[i + 1][0]);
+  for (let i = 0; i < words.length; i += 1) {
+    const resultLength = result.length;
+    console.log(resultLength);
 
-    if (words[i][lastIndexLetter] === words[i + 1][0]) {
-      return true;
+    if (!resultLength) {
+      result.push(words[i]);
+    } else if (
+      result[resultLength - 1][result[resultLength - 1].length - 1] ===
+      words[i][0]
+    ) {
+      console.log(result[resultLength - 1].length - 1);
+
+      result.push(words[i]);
     }
+    // else {
+    //   console.log(
+    //     result[resultLength - 1][result[resultLength - 1].length - 1],
+    //   );
+    // }
+    // else if (words[i - 1][lastIndexLetter] === words[i][0]) {
+    //   result.push(words[i]);
+    // }
   }
-  return false;
+  return result;
 }
 
 console.log(

@@ -2,20 +2,29 @@ function solution(words) {
   const result = [];
   const rest = [];
   const inTwoLetters = words.map(item => item[0] + item.slice(-1));
+  console.log('inTwoLetters', inTwoLetters);
 
-  for (let i = 0; i < inTwoLetters.length; i += 1) {
+  for (let i = 0; i < words.length; i += 1) {
     if (!result.length) {
-      result.push(inTwoLetters[i]);
-    } else if (result[result.length - 1][1] === inTwoLetters[i][0]) {
+      result.push(...inTwoLetters.splice(0, 1));
+    } else {
+      //filetr ?
+    }
+
+    /*
+    else if (result[result.length - 1][1] === inTwoLetters[i][0]) {
       result.push(inTwoLetters[i]);
     } else if (result[0][0] === inTwoLetters[i][1]) {
       result.unshift(inTwoLetters[i]);
     } else {
       rest.push(inTwoLetters[i]);
     }
+    */
   }
-
-  console.log(result.concat(rest));
+  console.log('inTwoLetters', inTwoLetters);
+  console.log('result', result);
+  console.log('restr', rest);
+  // console.log(result.concat(rest));
   // console.log('restr', rest);
   // return result;
   // return solution(result.concat(rest));
@@ -73,38 +82,15 @@ ALGORITHMS ARRAYS STRINGS
 */
 
 /*
-function solution(words) {
-  const result = [];
-  for (let j = 0; j < words.length; j += 1) {
-    const wordsArr = words.slice();
-
-    for (let i = 0; i < wordsArr.length; i += 1) {
-      const resultLength = result.length;
-      // console.log(resultLength);
-      if (!resultLength) {
-        // result.push(wordsArr[i]);
-        result.push(wordsArr.splice(i, 1, 0));
-        console.log(1, wordsArr.length, wordsArr);
-      } else if (
-        result[resultLength - 1][result[resultLength - 1].length - 1] ===
-        wordsArr[i][0]
-      ) {
-        // console.log(result[resultLength - 1].length - 1);
-        // result.push(wordsArr[i]);
-        result.push(wordsArr.splice(i, 1, 0));
-        console.log(2, wordsArr.length, wordsArr);
-      } else if (
-        result[resultLength - 1][result[resultLength - 1].length - 1] !==
-          wordsArr[i][0] &&
-        result[0][0] === wordsArr[i][wordsArr[i].length - 1]
-      ) {
-        // console.log(words[i]);
-        // result.unshift(wordsArr[i]);
-        result.unshift(wordsArr.splice(i, 1, 0));
-        console.log(3, wordsArr.length, wordsArr);
-      }
+for (let i = 0; i < inTwoLetters.length; i += 1) {
+    if (!result.length) {
+      result.push(inTwoLetters[i]);
+    } else if (result[result.length - 1][1] === inTwoLetters[i][0]) {
+      result.push(inTwoLetters[i]);
+    } else if (result[0][0] === inTwoLetters[i][1]) {
+      result.unshift(inTwoLetters[i]);
+    } else {
+      rest.push(inTwoLetters[i]);
     }
   }
-  return result;
-}
 */

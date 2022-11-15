@@ -1,67 +1,60 @@
 function solution(words) {
   const result = [];
-  const inTwoLetters = words.map(item => item[0] + item.slice(-1)).sort();
+  const rest = [];
+  const inTwoLetters = words.map(item => item[0] + item.slice(-1));
   console.log('inTwoLetters', inTwoLetters);
-  for (let i = 0; i < words.length; i += 1) {
-    inTwoLetters.forEach((item, idx) => {
-      if (!result.length) {
-        result.push(...inTwoLetters.splice(idx, 1));
-      } else if (result[0][0] === item[1]) {
-        result.unshift(...inTwoLetters.splice(idx, 1));
-      } else if (result[result.length - 1][1] === item[0]) {
-        result.push(...inTwoLetters.splice(idx, 1));
-      }
-    });
-    console.log('result', result);
+
+  for (let i = 0; i < inTwoLetters.length; i += 1) {
+    for (let j = 0; j < inTwoLetters.length; j += 1) {}
   }
 
-  return result.length === words.length;
+  // return result.length === words.length;
 }
 
 console.log(solution(['strike', 'eye', 'exotic', 'east', 'cycle', 'excavate'])); //  true,
 console.log(
   solution(['strike', 'exotic', 'elephant', 'temperature', 'transport']),
 ); //  true,
-console.log(
-  solution([
-    'entertainment',
-    'cycle',
-    'endure',
-    'traffic',
-    'endorse',
-    'expansion',
-  ]),
-); //  true,
-console.log(solution(['elephant', 'temperature', 'traffic'])); //  true,
+// console.log(
+//   solution([
+//     'entertainment',
+//     'cycle',
+//     'endure',
+//     'traffic',
+//     'endorse',
+//     'expansion',
+//   ]),
+// ); //  true,
+// console.log(solution(['elephant', 'temperature', 'traffic'])); //  true,
 
-console.log(
-  solution([
-    'excavate',
-    'endure',
-    'desire',
-    'screen',
-    'theater',
-    'excess',
-    'night',
-  ]),
-); // true
+// console.log(
+//   solution([
+//     'excavate',
+//     'endure',
+//     'desire',
+//     'screen',
+//     'theater',
+//     'excess',
+//     'night',
+//   ]),
+// ); // true
 
-console.log(
-  solution([
-    'trade',
-    'pole',
-    'view',
-    'grave',
-    'ladder',
-    'mushroom',
-    'president',
-  ]),
-); //  false,
+// console.log(
+//   solution([
+//     'trade',
+//     'pole',
+//     'view',
+//     'grave',
+//     'ladder',
+//     'mushroom',
+//     'president',
+//   ]),
+// ); //  false,
 
-console.log(solution(['screen', 'desire', 'theater', 'excess', 'night'])); // true,
-console.log(solution(['engine', 'endure', 'elite', 'excess'])); //, true);
-console.log(solution(['east', 'e', 'e', 't', 't', 'e', 'time'])); //,      true,
-console.log(solution(['no', 'dog', 'on', 'good'])); //, false);
+// console.log(solution(['screen', 'desire', 'theater', 'excess', 'night'])); // true,
+// console.log(solution(['engine', 'endure', 'elite', 'excess'])); //, true);
+// console.log(solution(['east', 'e', 'e', 't', 't', 'e', 'time'])); //,      true,
+// console.log(solution(['no', 'dog', 'on', 'good'])); //, false);
 
 /*
 6 kyu
@@ -86,6 +79,26 @@ ALGORITHMS ARRAYS STRINGS
 */
 
 /*
+
+function solution(words) {
+  const result = [];
+  const inTwoLetters = words.map(item => item[0] + item.slice(-1)).sort();
+  console.log('inTwoLetters', inTwoLetters);
+  for (let i = 0; i < words.length; i += 1) {
+    inTwoLetters.forEach((item, idx) => {
+      if (!result.length) {
+        result.push(...inTwoLetters.splice(idx, 1));
+      } else if (result[0][0] === item[1]) {
+        result.unshift(...inTwoLetters.splice(idx, 1));
+      } else if (result[result.length - 1][1] === item[0]) {
+        result.push(...inTwoLetters.splice(idx, 1));
+      }
+    });
+    console.log('result', result);
+  }
+
+  return result.length === words.length;
+}
 
 function solution(words) {
   const result = [];

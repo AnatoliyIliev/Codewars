@@ -1,30 +1,80 @@
 function solution(words) {
   const result = [];
-  const rest = [];
-  const inTwoLetters = words.map(item => item[0] + item.slice(-1));
+  const inTwoLetters = words.map(item => item[0] + item.slice(-1)).sort();
+
   console.log('inTwoLetters', inTwoLetters);
 
-  for (let i = 0; i < inTwoLetters.length; i += 1) {
-    for (let j = 0; j < inTwoLetters.length; j += 1) {}
+  result.push(...inTwoLetters.splice(0, 1));
+
+  for (let i = 0; i < words.length; i += 1) {
+    inTwoLetters.forEach((item, idx) => {
+      if (result[0][0] === item[1]) {
+        result.unshift(...inTwoLetters.splice(idx, 1));
+      } else if (result[result.length - 1][1] === item[0]) {
+        result.push(...inTwoLetters.splice(idx, 1));
+      } else if (result[result.length - 1][1] === result[0][0]) {
+        result.unshift(result.pop());
+      } else {
+        inTwoLetters.push(...inTwoLetters.splice(idx, 1));
+      }
+    });
+
+    // inTwoLetters.forEach((item, idx) => {
+    //   if (result[result.length - 1][1] === item[0]) {
+    //     result.push(...inTwoLetters.splice(idx, 1));
+    //   }
+    // });
   }
 
-  // return result.length === words.length;
+  // if (inTwoLetters.length) {
+  //   result.forEach((item, idx, arr) => {
+  //     inTwoLetters.forEach((elem, index) => {
+  //       if (
+  //         item[1] === elem[0] &&
+  //         arr.length - 1 >= idx &&
+  //         item[1] === arr[idx + 1][0]
+  //       ) {
+  //         result.unshift(...inTwoLetters.splice(idx, 1));
+  //       }
+  //     });
+  //   });
+  // }
+
+  console.log('inTwoLetters', inTwoLetters);
+  console.log('result', result);
+
+  return inTwoLetters.length === 0;
 }
 
+console.log(
+  solution(['evaluate', 'evaluate', 'stereotype', 'tablet', 'effort']),
+); //  true,
+
+console.log(
+  solution([
+    'excavate',
+    'trade',
+    'excavate',
+    'elephant',
+    'stereotype',
+    'expansion',
+  ]),
+); //  true,
+console.log(solution(['dog', 'no', 'dragon', 'good'])); //  true,
 console.log(solution(['strike', 'eye', 'exotic', 'east', 'cycle', 'excavate'])); //  true,
 console.log(
   solution(['strike', 'exotic', 'elephant', 'temperature', 'transport']),
 ); //  true,
-// console.log(
-//   solution([
-//     'entertainment',
-//     'cycle',
-//     'endure',
-//     'traffic',
-//     'endorse',
-//     'expansion',
-//   ]),
-// ); //  true,
+console.log(
+  solution([
+    'entertainment',
+    'cycle',
+    'endure',
+    'traffic',
+    'endorse',
+    'expansion',
+  ]),
+); //  true,
 // console.log(solution(['elephant', 'temperature', 'traffic'])); //  true,
 
 // console.log(

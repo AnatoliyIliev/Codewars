@@ -1,45 +1,30 @@
 function solution(words) {
   const result = [];
-  const inTwoLetters = words.map(item => item[0] + item.slice(-1));
-
+  // const rest = [];
+  const inTwoLetters = words.map(item => item[0] + item.slice(-1)).sort();
   // console.log('inTwoLetters', inTwoLetters);
-
-  result.push(...inTwoLetters.splice(0, 1));
-
   for (let i = 0; i < words.length; i += 1) {
-    for (let j = 0; j < inTwoLetters.length; j += 1) {
-      if (result[0][0] === inTwoLetters[j][1]) {
-        result.unshift(...inTwoLetters.splice(j, 1));
-        break;
-      } else if (result[0][1] === inTwoLetters[j][0]) {
-        result.push(...inTwoLetters.splice(j, 1));
-        break;
+    inTwoLetters.forEach((item, idx) => {
+      if (!result.length) {
+        result.push(...inTwoLetters.splice(idx, 1));
+        // result.push(item);
+      } else if (result[result.length - 1][1] === item[0]) {
+        // console.log(result[result.length - 1], '===', item);
+        result.push(...inTwoLetters.splice(idx, 1));
+        // result.push(item);
+      } else if (result[0][0] === item[1]) {
+        result.unshift(...inTwoLetters.splice(idx, 1));
+        // result.unshift(item);
       }
-      for (let h = 0; h < result.length - 1; h += 1) {
-        if (
-          inTwoLetters.length !== 0 &&
-          result[result.length - 1][1] === inTwoLetters[j][0]
-        ) {
-          result.push(...inTwoLetters.splice(j, 1));
-          break;
-        }
-        for (let k = 1; k < result.length; k += 1) {
-          if (
-            inTwoLetters.length !== 0 &&
-            result[h][1] === inTwoLetters[j][0] &&
-            result[k][0] === inTwoLetters[j][1]
-          ) {
-            result.splice(k, 0, ...inTwoLetters.splice(j, 1));
-          }
-        }
-      }
-    }
+    });
   }
 
   // console.log('inTwoLetters', inTwoLetters);
   // console.log('result', result);
+  // console.log('rest', rest);
 
-  return inTwoLetters.length === 0;
+  // console.log(inTwoLetters, 'result', result);
+  return result.length === words.length;
 }
 
 console.log(
@@ -277,3 +262,52 @@ for (let i = 0; i < inTwoLetters.length; i += 1) {
   //   });
   // }
   */
+
+/*
+
+  function solution(words) {
+  const result = [];
+  const inTwoLetters = words.map(item => item[0] + item.slice(-1));
+
+  // console.log('inTwoLetters', inTwoLetters);
+
+  result.push(...inTwoLetters.splice(0, 1));
+
+  for (let i = 0; i < words.length; i += 1) {
+    for (let j = 0; j < inTwoLetters.length; j += 1) {
+      if (result[0][0] === inTwoLetters[j][1]) {
+        result.unshift(...inTwoLetters.splice(j, 1));
+        break;
+      } else if (result[0][1] === inTwoLetters[j][0]) {
+        result.push(...inTwoLetters.splice(j, 1));
+        break;
+      }
+      for (let h = 0; h < result.length - 1; h += 1) {
+        if (
+          inTwoLetters.length !== 0 &&
+          result[result.length - 1][1] === inTwoLetters[j][0]
+        ) {
+          result.push(...inTwoLetters.splice(j, 1));
+          break;
+        }
+        for (let k = 1; k < result.length; k += 1) {
+          if (
+            inTwoLetters.length !== 0 &&
+            result[h][1] === inTwoLetters[j][0] &&
+            result[k][0] === inTwoLetters[j][1]
+          ) {
+            result.splice(k, 0, ...inTwoLetters.splice(j, 1));
+          }
+        }
+      }
+    }
+  }
+
+  // console.log('inTwoLetters', inTwoLetters);
+  // console.log('result', result);
+
+  return inTwoLetters.length === 0;
+}
+
+
+*/

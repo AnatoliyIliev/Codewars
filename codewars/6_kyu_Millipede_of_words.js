@@ -1,29 +1,31 @@
 function solution(words, bool) {
   const result = [];
-  const inTwoLetters = words.map(item => item[0] + item.slice(-1));
+
+  const inTwoLetters = words.map(item => item[0] + item.slice(-1)).sort();
+
   console.log('inTwoLetters', inTwoLetters);
+
+  // const result = inTwoLetters.reduce((accum, item, index, arr) => {}, []);
 
   result.push(...inTwoLetters.splice(0, 1));
 
   for (let i = 0; i < words.length; i += 1) {
     for (let j = 0; j < inTwoLetters.length; j += 1) {
-      if (result[0][0] === inTwoLetters[j][1]) {
-        result.unshift(...inTwoLetters.splice(j, 1));
-        break;
-      } else if (result[result.length - 1][1] === inTwoLetters[j][0]) {
+      if (result[result.length - 1][1] === inTwoLetters[j][0]) {
         result.push(...inTwoLetters.splice(j, 1));
         break;
+      } else if (result[0][0] === inTwoLetters[j][1]) {
+        result.unshift(...inTwoLetters.splice(j, 1));
+        break;
       }
-      for (let h = 0; h < result.length; h += 1) {
-        if (inTwoLetters.length !== 0) {
-          break;
-        } else if (
-          result.length > 1 &&
+      for (let h = 0; h < result.length - 1; h += 1) {
+        if (
           result[h][1] === inTwoLetters[j][0] &&
           result[h + 1][0] === inTwoLetters[j][1]
         ) {
           result.splice(h + 1, 0, ...inTwoLetters.splice(j, 1));
         }
+        break;
       }
     }
   }
@@ -177,6 +179,47 @@ ALGORITHMS ARRAYS STRINGS
   // console.log('inTwoLetters', inTwoLetters);
   // console.log('result', result);
 
+  return inTwoLetters.length === 0;
+}
+
+
+*/
+
+/*
+function solution(words, bool) {
+  const result = [];
+
+  const inTwoLetters = words
+    .map(item => item[0] + item.slice(-1))
+    .sort((a, b) => a[0] - b[1]);
+  console.log('inTwoLetters', inTwoLetters);
+
+  result.push(...inTwoLetters.splice(0, 1));
+
+  for (let i = 0; i < words.length; i += 1) {
+    for (let j = 0; j < inTwoLetters.length; j += 1) {
+      if (result[0][0] === inTwoLetters[j][1]) {
+        result.unshift(...inTwoLetters.splice(j, 1));
+        break;
+      } else if (result[result.length - 1][1] === inTwoLetters[j][0]) {
+        result.push(...inTwoLetters.splice(j, 1));
+        break;
+      }
+      for (let h = 0; h < result.length; h += 1) {
+        if (
+          result.length !== 0 &&
+          result[h][1] === inTwoLetters[j][0] &&
+          result[h + 1][0] === inTwoLetters[j][1]
+        ) {
+          result.splice(h + 1, 0, ...inTwoLetters.splice(j, 1));
+        }
+      }
+    }
+  }
+
+  console.log('inTwoLetters', inTwoLetters);
+  console.log('result', result);
+  console.log(bool);
   return inTwoLetters.length === 0;
 }
 

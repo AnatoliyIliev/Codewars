@@ -1,39 +1,43 @@
 function solution(words, bool) {
-  const result = [];
+  // const result = [];
 
-  const inTwoLetters = words.map(item => item[0] + item.slice(-1)).sort();
+  const inTwoLetters = words.map(item => item[0] + item.slice(-1));
 
   console.log('inTwoLetters', inTwoLetters);
+
+  // const res = inTwoLetters.map((item, ind, arr) => { });
+  const res = inTwoLetters.reduce((accum, item, index, arr) => {}, []);
 
   // const result = inTwoLetters.reduce((accum, item, index, arr) => {}, []);
 
-  result.push(...inTwoLetters.splice(0, 1));
+  // result.push(...inTwoLetters.splice(0, 1));
 
-  for (let i = 0; i < words.length; i += 1) {
-    for (let j = 0; j < inTwoLetters.length; j += 1) {
-      if (result[result.length - 1][1] === inTwoLetters[j][0]) {
-        result.push(...inTwoLetters.splice(j, 1));
-        break;
-      } else if (result[0][0] === inTwoLetters[j][1]) {
-        result.unshift(...inTwoLetters.splice(j, 1));
-        break;
-      }
-      for (let h = 0; h < result.length - 1; h += 1) {
-        if (
-          result[h][1] === inTwoLetters[j][0] &&
-          result[h + 1][0] === inTwoLetters[j][1]
-        ) {
-          result.splice(h + 1, 0, ...inTwoLetters.splice(j, 1));
-        }
-        break;
-      }
-    }
-  }
+  // for (let i = 0; i < words.length; i += 1) {
+  //   for (let j = 0; j < inTwoLetters.length; j += 1) {
+  //     if (result[result.length - 1][1] === inTwoLetters[j][0]) {
+  //       result.push(...inTwoLetters.splice(j, 1));
+  //       break;
+  //     } else if (result[0][0] === inTwoLetters[j][1]) {
+  //       result.unshift(...inTwoLetters.splice(j, 1));
+  //       break;
+  //     }
+  //     for (let h = 0; h < result.length - 1; h += 1) {
+  //       if (
+  //         result[h][1] === inTwoLetters[j][0] &&
+  //         result[h + 1][0] === inTwoLetters[j][1]
+  //       ) {
+  //         result.splice(h + 1, 0, ...inTwoLetters.splice(j, 1));
+  //       }
+  //       break;
+  //     }
+  //   }
+  // }
 
-  console.log('inTwoLetters', inTwoLetters);
-  console.log('result', result);
+  // console.log('inTwoLetters', inTwoLetters);
+  // console.log('result', result);
+  console.log('res', res);
   console.log(bool);
-  return inTwoLetters.length === 0;
+  // return inTwoLetters.length === 0;
 }
 
 console.log(
